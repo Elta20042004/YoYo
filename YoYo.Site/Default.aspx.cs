@@ -43,6 +43,7 @@ namespace WebApplication4
 
         protected void Color_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+            // Lena - pupsik
             ShopEntities dbShop = new ShopEntities();
 
             IEnumerable<Product> products = dbShop.Products;
