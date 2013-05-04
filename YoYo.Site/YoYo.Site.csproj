@@ -60,8 +60,15 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="CheckOut.aspx" />
     <Content Include="Foto.aspx" />
+    <Content Include="Images\large.jpg" />
+    <Content Include="Images\monkey.jpg" />
+    <Content Include="Images\monks.jpg" />
     <Content Include="New.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\responsive-carousel.js" />
+    <Content Include="Scripts\responsive-carousel.min.js" />
+    <Content Include="Styles\responsive-carousel.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
