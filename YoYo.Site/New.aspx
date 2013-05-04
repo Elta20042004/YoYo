@@ -1,34 +1,28 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="WebApplication4._Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
+    CodeBehind="New.aspx.cs" Inherits="WebApplication4.New" %>
 
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-    <style type="text/css">
-        .style1
-        {
-            width: 735px;
-        }
-        .style2
-        {
-            width: 178px;
-        }
-    </style>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
+
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main">
         <table width="920" border="1" cellspacing="0" cellpadding="10">
             <tr bgcolor="oldlace">
                 <td height="400" class="style2" valign="top">
-                    <div>
-                        <asp:Menu ID="menuBar" runat="server" Orientation="Vertical" Width="100%" 
-                            onmenuitemclick="menuBar_MenuItemClick">
-                        </asp:Menu>
-                    </div>                   
+                    <div>                  
+                        <asp:CheckBoxList  AutoPostBack="true" ID="Color" runat="server" OnSelectedIndexChanged="Color_OnSelectedIndexChanged" >
+                            <asp:ListItem Value="145">blue</asp:ListItem>
+                            <asp:ListItem Value="140">yellow</asp:ListItem>
+                            <asp:ListItem Value="138">black</asp:ListItem>
+                            <asp:ListItem Value="160">white</asp:ListItem>     
+                        </asp:CheckBoxList>
+                    </div>
                 </td>
                 <td class="style1" valign="top">
                     <h1>
                         <asp:ListView ID="ListView_Products" runat="server" DataKeyNames="id" 
                             GroupItemCount="4" 
-                            onselectedindexchanged="ListView_Products_SelectedIndexChanged">
+                            >
                             <EmptyDataTemplate>
                                 <table id="Table1" runat="server">
                                     <tr>
@@ -103,4 +97,5 @@
             </tr>
         </table>
     </div>
+
 </asp:Content>

@@ -10,16 +10,16 @@
 namespace WebApplication4 {
     
     
-    public partial class _Default {
+    public partial class New {
         
         /// <summary>
-        /// menuBar control.
+        /// Color control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu menuBar;
+        protected global::System.Web.UI.WebControls.CheckBoxList Color;
         
         /// <summary>
         /// ListView_Products control.
