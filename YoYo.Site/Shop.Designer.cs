@@ -8,15 +8,15 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-
 namespace WebApplication4
 {
     #region Contexts
@@ -114,6 +114,7 @@ namespace WebApplication4
         private ObjectSet<Product> _Products;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -141,11 +142,11 @@ namespace WebApplication4
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -170,6 +171,7 @@ namespace WebApplication4
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -296,6 +298,7 @@ namespace WebApplication4
         partial void OnNavigateUrlChanged();
 
         #endregion
+
     
     }
     
@@ -323,6 +326,7 @@ namespace WebApplication4
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -521,6 +525,7 @@ namespace WebApplication4
         partial void OnKategoryIDChanged();
 
         #endregion
+
     
     }
     
@@ -546,6 +551,7 @@ namespace WebApplication4
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -672,9 +678,11 @@ namespace WebApplication4
         partial void OnPasswordChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

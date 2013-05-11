@@ -144,7 +144,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Shop">
-        <EntityTypeShape EntityType="ShopModel.User" Width="1.5" PointX="3.625" PointY="2" Height="1.9802864583333331" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.User" Width="1.5" PointX="3.625" PointY="2.5" Height="1.9802864583333331" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopModel.Category" Width="1.5" PointX="4.375" PointY="4.75" Height="1.9802864583333335" />
         <EntityTypeShape EntityType="ShopModel.Product" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" />
       </Diagram>

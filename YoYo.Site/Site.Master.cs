@@ -24,7 +24,7 @@ namespace WebApplication4
 
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
-
+            
         }
     }
 }

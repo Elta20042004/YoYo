@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYo.Site", "YoYo.Site\YoYo.Site.csproj", "{74B41C07-FCB8-4EF5-8D28-7CE715787D6C}"
 EndProject
 Global

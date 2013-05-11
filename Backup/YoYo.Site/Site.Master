@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication4.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="~/Styles/Site.css?t=<%= DateTime.Now.Ticks %>" media="screen" />
+    <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 677px;
+        }
+        .style2
+        {
+            width: 404px;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    function menuClick() 
+    {        
+        document.getElementById("NavigationMenu").style.textDecoration:underline;    
+    }
+</script>
+
+    <form runat="server">
+    <div class="page">
+        <div class="header" style="background-color:White">
+            <div class="title">
+                <h1 style="color:Black">
+                    YoYo
+                </h1>
+            </div>
+            <div class="loginDisplay"   style="color:Black">
+                <asp:Label ID="Label1" runat="server" Text="Label">Welcome to YoYo. </asp:Label>
+                <asp:HyperLink ForeColor="Black" ID="LinkButton1" runat="server" NavigateUrl="~/Registration.aspx">Join | </asp:HyperLink>
+                <asp:HyperLink ForeColor="Black" ID="LinkButton2" runat="server" NavigateUrl="~/SingIn.aspx">Sign In</asp:HyperLink>
+            </div>
+            <div class="clear hideSkiplink" style="background-color:White">
+                <asp:Menu  ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+                    IncludeStyleBlock="false" Orientation="Horizontal" 
+                    onmenuitemclick="NavigationMenu_MenuItemClick">
+                    
+                    <Items>
+                   
+                        <asp:MenuItem  NavigateUrl="~/Default.aspx" 
+                        Text="<span style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories<span>" 
+                        >
+                            <asp:MenuItem  Value="New in Accessories" Text="New in ozhirele" />
+                            <asp:MenuItem Value="New in Accessories" Text="New in earrings" />
+                            <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
+                        </asp:MenuItem>
+                        <asp:MenuItem  NavigateUrl="~/Default.aspx" Text="Accessories">
+                            <asp:MenuItem Value="New in Accessories" Text="ozhirele" />
+                            <asp:MenuItem Value="New in Accessories" Text="earrings" />
+                            <asp:MenuItem Value="New in Accessories" Text="bracelet" />
+                        </asp:MenuItem>
+
+                    </Items>
+
+                </asp:Menu>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>
