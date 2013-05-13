@@ -160,6 +160,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\CookieRepository.cs" />
+    <Compile Include="Logic\FileRepository.cs" />
+    <Compile Include="Logic\IProductRepository.cs" />
+    <Compile Include="Logic\ProductManager.cs" />
     <Compile Include="New.aspx.cs">
       <DependentUpon>New.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

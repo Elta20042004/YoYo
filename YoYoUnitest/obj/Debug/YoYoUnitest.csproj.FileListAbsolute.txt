@@ -1,0 +1,7 @@
+F:\Lena_Projects\YoYo\YoYoUnitest\bin\Debug\YoYoUnitest.dll
+F:\Lena_Projects\YoYo\YoYoUnitest\bin\Debug\YoYoUnitest.pdb
+F:\Lena_Projects\YoYo\YoYoUnitest\bin\Debug\WebApplication4.dll
+F:\Lena_Projects\YoYo\YoYoUnitest\bin\Debug\WebApplication4.pdb
+F:\Lena_Projects\YoYo\YoYoUnitest\obj\Debug\YoYoUnitest.csprojResolveAssemblyReference.cache
+F:\Lena_Projects\YoYo\YoYoUnitest\obj\Debug\YoYoUnitest.dll
+F:\Lena_Projects\YoYo\YoYoUnitest\obj\Debug\YoYoUnitest.pdb
