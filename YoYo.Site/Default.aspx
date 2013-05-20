@@ -3,22 +3,25 @@
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
     <style type="text/css">
-        .style1
-        {
+        .style1 {
             width: 735px;
         }
-        .style2
-        {
+
+        .style2 {
             width: 178px;
+        }
+
+        .auto-style1 {
+            width: 100px;
         }
     </style>
     <!-- Load local jQuery, removing access to $ (use jQuery, not $). -->
     <script src="Scripts/responsive-carousel/libs/jquery/jquery.js"></script>
     <link rel="stylesheet" href="Scripts/responsive-carousel/src/responsive-carousel.css"
-        media="screen"/>
+        media="screen" />
     <link rel="stylesheet" href="Scripts/responsive-carousel/src/responsive-carousel.slide.css"
-        media="screen"/>
-    <link rel="stylesheet" href="Scripts/responsive-carousel/test/assets/demostyles.css"/>
+        media="screen" />
+    <link rel="stylesheet" href="Scripts/responsive-carousel/test/assets/demostyles.css" />
     <script src="Scripts/responsive-carousel/src/responsive-carousel.js"></script>
     <script src="Scripts/responsive-carousel/src/responsive-carousel.keybd.js"></script>
     <script src="Scripts/responsive-carousel/src/responsive-carousel.touch.js"></script>
@@ -27,31 +30,30 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main">
-        <table width="920" border="1" cellspacing="0" cellpadding="10">
-            <tr bgcolor="oldlace">
-                <td height="200" class="style2" valign="top">
+        <table width="920" border="0" cellspacing="0" cellpadding="10">
+            <tr>
+                <td class="auto-style1" valign="top">
                     <div>
-                        <asp:Menu ID="menuBar" runat="server" Orientation="Vertical" Width="100%" OnMenuItemClick="menuBar_MenuItemClick">
+                        <asp:Menu ID="menuBar" runat="server" Orientation="Vertical" Width="100">
                         </asp:Menu>
                     </div>
                 </td>
-                <td height="400" class="style2">
-                    <div class="carousel" data-transition="slide">
-                        <div>
-                            <image src="Images/large.jpg" />
+                <td class="style2">
+                    <div class="carousel" data-transition="slide" id="carousel">
+                        <div>                           
+                            <img src="Images/large.jpg"    width="800"/>
                         </div>
                         <div>
-                            <image src="Images/monks.jpg" />
+                            <img src="Images/monks.jpg" width="800" />
                         </div>
                         <div>
-                            <image src="Images/monkey.jpg" />
+                            <img src="Images/monkey.jpg" width="800" />
                         </div>
                     </div>
                 </td>
             </tr>
             <tr bgcolor="darkred">
-                <td colspan="2" height="30">
-                    низ сайта
+                <td colspan="2" height="30">низ сайта
                 </td>
             </tr>
         </table>

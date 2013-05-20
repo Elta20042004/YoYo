@@ -4,7 +4,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    
     <asp:ListView ID="ListView_Products" runat="server" DataKeyNames="id" GroupItemCount="4">
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
@@ -26,14 +25,14 @@
         </GroupTemplate>
         <ItemTemplate>
             <td id="Td2" runat="server">
-                <table border="0" width="170">
+                <table border="0" width="170" runat="server">
                     <tr>
                         <td>
                             <tr>
                                 <a href='foto.aspx?productID=<%# Eval("id") %>'>
                                     <image src='<%# Eval("PictureBig") %>' width="150" height="280" border="0">
                                 </a>
-                                <div style="font-size: xx-small">
+                                <div style="font-size: xx-small" runat="server">
                                     <a href='ProductDetails.aspx?productID=<%# Eval("id") %>'><span class="ProductListHead">
                                         <%# Eval("Name")%>
                                     </span>
@@ -44,7 +43,10 @@
                                     <br />
                                     <a href='AddToCart.aspx?productID=<%# Eval("id") %>'><span class="ProductListItem"><b>
                                         Add To Cart<b></font></span> </a>
-                                </div>
+                                    <asp:Button ID="Remove" runat="server" Text="Remove" 
+                                        CommandName="Remove" CommandArgument='<%# Eval("id") %>' 
+                                        OnCommand="Remove_Command"/>
+                                </div>                                                                                                
                             </tr>
                         </td>
                     </tr>

@@ -25,16 +25,7 @@ namespace WebApplication4
 
         
         
-        protected void menuBar_MenuItemClick(object sender, MenuEventArgs e)
-        
-        {
-      
-        
-            
-            CheckOut.CheckOutProducts.Add(CheckOut.New);
-            Response.Write("<script>window.open('CheckOut.aspx')</script>");
-        
-        }
+       
 
         protected void ListView_Products_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -1,5 +1,11 @@
 ﻿/* DEFAULTS
 ----------------------------------------------------------*/
+div.carousel 
+{
+   margin: 0px;
+
+}
+
 
 body   
 {
@@ -151,7 +157,6 @@ div.hideSkiplink
 div.menu
 {
     padding: 4px 0px 4px 8px;
-    
 }
 
 div.menu ul
@@ -159,13 +164,15 @@ div.menu ul
     list-style: none;
     margin: 0px;
     padding: 0px;
-    width: auto;
-    
+    width: auto;   
 }
+
+
+
 
 div.menu ul li a, div.menu ul li a:visited
 {
-    background-color:White;
+    background-color:burlywood;
     border: 1px White solid;
     color: Black;
     display: block;
@@ -179,8 +186,8 @@ div.menu ul li a, div.menu ul li a:visited
 
 div.menu ul li a:hover
 {
-    background-color:White;
-    color: White;
+    background-color:white;
+    color:aqua;
     text-decoration: none;    
 }
 

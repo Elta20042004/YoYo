@@ -4,11 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebApplication4.Logic;
 
 namespace WebApplication4
 {
     public partial class Foto : System.Web.UI.Page
     {
+        ProductManager _productManager;
+        public Foto()
+        {
+            _productManager = new ProductManager(new FileRepository());
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ShopEntities dbShop = new ShopEntities();
@@ -24,22 +31,16 @@ namespace WebApplication4
                 imageBigPicture.ImageUrl = One.PictureBig;
                 labelProdectName.Text = One.Name;
                 labelDescription.Text = One.Price.ToString();
-                CheckOut.New = One;
+                HttpContext.Current.Session.Add("productID", One.id.ToString());
             }                    
         }
 
-        protected void ListView_Products_SelectedIndexChanged(object sender, EventArgs e)
+        protected void lnkAddToCart_Click(object sender, EventArgs e)
         {
-
-
-
-        }
-
-        protected void buttonChechOut_Click(object sender, EventArgs e)
-        {
-
-            CheckOut.CheckOutProducts.Add(CheckOut.New);
-            Response.Write("<script>window.open('CheckOut.aspx')</script>");
+            string param = HttpContext.Current.Session.Contents["productID"].ToString();
+            int productId = int.Parse(param);
+            _productManager.AddProduct(productId);
+            Response.Redirect("CheckOut.aspx");
         }
     }
 }

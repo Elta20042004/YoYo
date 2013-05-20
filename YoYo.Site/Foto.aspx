@@ -14,16 +14,14 @@
         <tr>
             <td class="style3">
                 <a>
-                    <asp:Image runat="server" ID="imageBigPicture" Width="90" Height="200"></asp:Image>
+                    <asp:Image runat="server" ID="imageBigPicture" Width="90" Height="200" ></asp:Image>
                 </a>
                 <div style="font-size: xx-small">
                     <a>
                         <asp:Label runat="server" ID="labelProdectName"></asp:Label>
                     </a>
                     <asp:Label runat="server" ID="labelDescription"></asp:Label>
-                    <a>
-                    <asp:Button runat="server" ID="buttonChechOut" Text="Add" 
-                        onclick="buttonChechOut_Click" />
+                    <asp:LinkButton Text ="Add to cart" ID ="lnkAddToCart" runat ="server" OnClick ="lnkAddToCart_Click" ></asp:LinkButton>
                     </a>
                 </div>
             </td>

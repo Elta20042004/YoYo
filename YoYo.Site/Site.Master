@@ -17,6 +17,11 @@
         {
             width: 404px;
         }
+
+        div 
+        {
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
@@ -27,7 +32,7 @@
     }
 </script>
 
-    <form runat="server">
+    <form runat="server"  >
     <div class="page">
         <div class="header" style="background-color:White">
             <div class="title">
@@ -35,23 +40,26 @@
                     YoYo
                 </h1>
             </div>
-            <div class="loginDisplay"   style="color:Black">
+            <div class="loginDisplay" >
                 <asp:Label ID="Label1" runat="server" Text="Label">Welcome to YoYo. </asp:Label>
                 <asp:HyperLink ForeColor="Black" ID="LinkButton1" runat="server" NavigateUrl="~/Registration.aspx">Join | </asp:HyperLink>
                 <asp:HyperLink ForeColor="Black" ID="LinkButton2" runat="server" NavigateUrl="~/SingIn.aspx">Sign In</asp:HyperLink>
             </div>
-            <div class="clear hideSkiplink" style="background-color:White">
-                <asp:Menu  ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false"
+            <div  class="clear hideSkiplink"  >
+                <asp:Menu CssClass="menu" ID="NavigationMenu" runat="server"  EnableViewState="false"
                     IncludeStyleBlock="false" Orientation="Horizontal" 
-                    onmenuitemclick="NavigationMenu_MenuItemClick">
+                    onmenuitemclick="NavigationMenu_MenuItemClick" >
                     
-                    <Items>
+                    <Items >
                    
                         <asp:MenuItem  NavigateUrl="~/Default.aspx" 
-                        Text="<span style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories<span>" 
+                        Text="<span style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories<span>"   
                         >
-                            <asp:MenuItem  Value="New in Accessories" Text="New in ozhirele" />
-                            <asp:MenuItem Value="New in Accessories" Text="New in earrings" />
+                            <asp:MenuItem   Value="New in Accessories" Text="New in ozhirele" />
+                            <asp:MenuItem Value="New in Accessories" Text="New in earrings"  />
+                            <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
+                            <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
+                            <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
                             <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
                         </asp:MenuItem>
                         <asp:MenuItem  NavigateUrl="~/Default.aspx" Text="Accessories">
@@ -61,8 +69,13 @@
                         </asp:MenuItem>
 
                     </Items>
+                  
+                </asp:Menu> 
+                
+                <div>
+                     <asp:HyperLink ForeColor="Black" ID="Bag" runat="server" NavigateUrl="~/CheckOut.aspx">Bag</asp:HyperLink>
 
-                </asp:Menu>
+                </div>            
             </div>
         </div>
         <asp:ContentPlaceHolder ID="MainContent" runat="server">
