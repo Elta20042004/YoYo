@@ -57,8 +57,7 @@
                                                         </a><span class="ProductListItem"><b>Special Price: </b>
                                                             <%# Eval("Price", "{0:c}")%>
                                                         </span>
-                                                        <br />
-                                                        <a href='AddToCart.aspx?productID=<%# Eval("id") %>'><span class="ProductListItem"><b>Add To Cart<b></font></span> </a>
+                                                        <br />                                              
                                                     </div>
                                                 </tr>
                                             </td>

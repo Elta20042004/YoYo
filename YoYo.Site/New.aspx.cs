@@ -11,7 +11,7 @@ namespace WebApplication4
     
     public partial class New : System.Web.UI.Page
     {
-
+        
         int categoryID;
         protected void Page_Load(object sender, EventArgs e)
         {                
@@ -53,6 +53,8 @@ namespace WebApplication4
             ListView_Products.DataSource = colorProducts;
             ListView_Products.DataBind();
         }
+
+        
      
     }
 }
