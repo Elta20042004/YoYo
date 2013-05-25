@@ -32,24 +32,56 @@ namespace WebApplication4
             {
                 int productId = int.Parse(e.CommandArgument.ToString());
                 _productManager.RemuveProduct(productId);
-                Refrash();
+                Response.Redirect(Request.RawUrl);
             }
         }
 
         protected void Refrash()
         {
-            List<int> SelectedProductId = _productManager.GetProducts();
-            ShopEntities dbShop = new ShopEntities();
-            List<Product> selectedProducts = new List<Product>();
-            foreach (var product in dbShop.Products)
+            List<int> selectedProductId = _productManager.GetProducts();           
+            Dictionary<int, int> productSelection = new Dictionary<int, int>();
+            foreach (int product in selectedProductId)
             {
-                if (SelectedProductId.Contains(product.id))
+                if (!productSelection.ContainsKey(product))
                 {
-                    selectedProducts.Add(product);
+                    productSelection.Add(product, 1);
+                }
+                else
+                {
+                    productSelection[product] = productSelection[product]+1;
                 }
             }
+
+            ShopEntities dbShop = new ShopEntities();
+            List<CheckOutProduct> selectedProducts = new List<CheckOutProduct>();
+
+            foreach (Product product in dbShop.Products)
+            {
+                if (productSelection.ContainsKey(product.id))
+                {
+                    CheckOutProduct temp = new CheckOutProduct();
+                    temp.id = product.id;
+                    temp.PictureBig = product.PictureBig;
+                    temp.Name = product.Name;
+                    temp.Price = product.Price;
+                    temp.Quantity = productSelection[product.id];
+                    selectedProducts.Add(temp);
+                }
+            }
+
             ListView_Products.DataSource = selectedProducts;
             ListView_Products.DataBind();
         }
+
+        public class CheckOutProduct : Product
+        {
+            public int Quantity
+            {
+                get;
+                set;
+            }
+        }
     }
+
+
 }

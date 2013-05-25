@@ -3,8 +3,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style3
-        {
+        .style3 {
             height: 21px;
         }
     </style>
@@ -14,17 +13,24 @@
         <tr>
             <td class="style3">
                 <a>
-                    <asp:Image runat="server" ID="imageBigPicture" Width="90" Height="200" ></asp:Image>
+                    <asp:Image runat="server" ID="imageBigPicture" Width="100" Height="210"></asp:Image>
                 </a>
-                <div style="font-size: xx-small">
+            </td>
+            <td>
+                <div style="font-size: larger">
                     <a>
                         <asp:Label runat="server" ID="labelProdectName"></asp:Label>
                     </a>
-                    <asp:Label runat="server" ID="labelDescription"></asp:Label>
-                    <asp:LinkButton Text ="Add to cart" ID ="lnkAddToCart" runat ="server" OnClick ="lnkAddToCart_Click" ></asp:LinkButton>
+                </div>
+                <div>
+                    <a>
+                        <asp:Label runat="server" ID="labelDescription"></asp:Label>
+                        <asp:LinkButton Text="Add to cart" ID="lnkAddToCart" runat="server" OnClick="lnkAddToCart_Click"></asp:LinkButton>
                     </a>
                 </div>
             </td>
         </tr>
     </table>
+
+
 </asp:Content>

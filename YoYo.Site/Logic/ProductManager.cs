@@ -33,5 +33,24 @@ namespace WebApplication4.Logic
             var result = _productRepository.GetProducts();
             return result;
         }
+
+        public int Summa()
+        {
+            IList<int> selectedProducts = GetProducts();
+            ShopEntities dbShop = new ShopEntities();
+            int Sum = 0;
+            foreach (var product in selectedProducts)
+            {
+                foreach (var pr in dbShop.Products)
+                {
+                    if (product == pr.id)
+                    {
+                        Sum = Sum + pr.Price.Value;
+                    }
+                }
+            }
+
+            return Sum;
+        }
     }
 }

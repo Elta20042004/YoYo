@@ -19,6 +19,7 @@ namespace WebApplication4
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             ShopEntities dbShop = new ShopEntities();
 
             NavigationMenu.Items[1].ChildItems.Clear();
@@ -28,32 +29,23 @@ namespace WebApplication4
                 NavigationMenu.Items[1].ChildItems.Add(menuItem);
             }
 
-            Bag.Text = "Bag " + Summa().ToString();
-
-
+            Bag.Text = "Bag " + "(" + _productManager.Summa().ToString() + "$" +")";
         }
 
-        public int Summa()
-        {
-            IList<int> SummaProducts = _productManager.GetProducts();
-            ShopEntities dbShop = new ShopEntities();
-            int Sum = 0;
-            foreach (var product in dbShop.Products)
-            {               
-                if (SummaProducts.Contains(product.id)&& product.Price.HasValue)
-                {
-                    Sum = Sum + product.Price.Value;
-                }
-            
-            }
+      
 
-            return Sum;
-        }
+        //public int Summa()
+        //{
+        //    IList<int> selectedProducts = _productManager.GetProducts();
+        //    ShopEntities dbShop = new ShopEntities();
+        //    return selectedProducts.Join(dbShop.Products, t => t, f => f.id, (rt, rf) => rf.Price.Value)
+        //                           .Sum();
+        //}
 
 
         protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
         {
-            
+
         }
     }
 }

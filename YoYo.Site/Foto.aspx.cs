@@ -40,7 +40,7 @@ namespace WebApplication4
             string param = HttpContext.Current.Session.Contents["productID"].ToString();
             int productId = int.Parse(param);
             _productManager.AddProduct(productId);
-            Response.Redirect("CheckOut.aspx");
+            Response.Redirect(Request.RawUrl);
         }
     }
 }
