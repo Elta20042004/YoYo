@@ -172,7 +172,7 @@ div.menu ul
 
 div.menu ul li a, div.menu ul li a:visited
 {
-    background-color:burlywood;
+    background-color:white;
     border: 1px White solid;
     color: Black;
     display: block;
@@ -186,8 +186,8 @@ div.menu ul li a, div.menu ul li a:visited
 
 div.menu ul li a:hover
 {
-    background-color:white;
-    color:aqua;
+    background-color:black;
+    color:white;
     text-decoration: none;    
 }
 
@@ -278,7 +278,7 @@ div.accountInfo
 }
 
 .loginDisplay a:visited
-{|
+{
     color: white;
 }
 

@@ -12,11 +12,11 @@ namespace WebApplication4
 
     public partial class CheckOut : System.Web.UI.Page
     {
-        ProductManager _productManager;
+        CartManager _productManager;
 
         public CheckOut()
         {
-            _productManager = new ProductManager(new FileRepository());
+            _productManager = new CartManager(new FileRepository());
         }
         public static Product New;
         //public static List<Product> CheckOutProducts = new List<Product>();
@@ -31,14 +31,14 @@ namespace WebApplication4
             if (e.CommandName == "Remove")
             {
                 int productId = int.Parse(e.CommandArgument.ToString());
-                _productManager.RemuveProduct(productId);
+                _productManager.RemoveProduct(productId);
                 Response.Redirect(Request.RawUrl);
             }
         }
 
         protected void Refrash()
         {
-            List<int> selectedProductId = _productManager.GetProducts();           
+            IList<int> selectedProductId = _productManager.GetProducts();           
             Dictionary<int, int> productSelection = new Dictionary<int, int>();
             foreach (int product in selectedProductId)
             {
@@ -61,7 +61,7 @@ namespace WebApplication4
                 {
                     CheckOutProduct temp = new CheckOutProduct();
                     temp.id = product.id;
-                    temp.PictureBig = product.PictureBig;
+                    temp.Picture = product.Picture;
                     temp.Name = product.Name;
                     temp.Price = product.Price;
                     temp.Quantity = productSelection[product.id];

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="ShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="ShopModelStoreContainer">
           <EntitySet Name="Category" EntityType="ShopModel.Store.Category" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Product" EntityType="ShopModel.Store.Product" store:Type="Tables" Schema="dbo" />
@@ -27,11 +27,11 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
           <Property Name="Price" Type="int" />
           <Property Name="Color" Type="int" Nullable="false" />
-          <Property Name="PictureBig" Type="nvarchar" MaxLength="250" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="250" />
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CategoryId" Type="int" />
-          <Property Name="PictureSmall" Type="nvarchar" MaxLength="250" />
           <Property Name="KategoryID" Type="int" />
+          <Property Name="Descriprion" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -79,11 +79,11 @@
           <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Price" />
           <Property Type="Int32" Name="Color" Nullable="false" />
-          <Property Type="String" Name="PictureBig" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="CategoryId" />
-          <Property Type="String" Name="PictureSmall" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="KategoryID" />
+          <Property Type="String" Name="Descriprion" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Picture" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -112,11 +112,11 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="ShopModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="Descriprion" ColumnName="Descriprion" />
                 <ScalarProperty Name="KategoryID" ColumnName="KategoryID" />
-                <ScalarProperty Name="PictureSmall" ColumnName="PictureSmall" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="PictureBig" ColumnName="PictureBig" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

@@ -82,6 +82,7 @@
     <Content Include="Scripts\responsive-carousel.min.js" />
     <Content Include="SingIn.aspx" />
     <Content Include="Styles\Copy of Site.css" />
+    <Content Include="Styles\Foto.css" />
     <Content Include="Styles\responsive-carousel.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -160,10 +161,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\CookieData.cs" />
     <Compile Include="Logic\CookieRepository.cs" />
+    <Compile Include="Logic\RecentlyViewedManager.cs" />
     <Compile Include="Logic\FileRepository.cs" />
     <Compile Include="Logic\IProductRepository.cs" />
-    <Compile Include="Logic\ProductManager.cs" />
+    <Compile Include="Logic\CartManager.cs" />
     <Compile Include="New.aspx.cs">
       <DependentUpon>New.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

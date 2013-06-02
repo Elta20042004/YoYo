@@ -10,11 +10,13 @@ namespace WebApplication4
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
-        ProductManager _productManager;
-
+        CartManager _productManager;
+        RecentlyViewedManager _rvManager;
         public SiteMaster()
         {
-            _productManager = new ProductManager(new FileRepository());
+            var repository = new FileRepository();
+            _productManager = new CartManager(repository);
+            _rvManager = new RecentlyViewedManager(repository);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -30,9 +32,42 @@ namespace WebApplication4
             }
 
             Bag.Text = "Bag " + "(" + _productManager.Summa().ToString() + "$" +")";
+            Refrash();
         }
 
-      
+        protected void Refrash()
+        {
+            IList<int> selectedProductId = _rvManager.GetProducts();
+            Dictionary<int, int> productSelection = new Dictionary<int, int>();
+            foreach (int product in selectedProductId)
+            {
+                if (!productSelection.ContainsKey(product))
+                {
+                    productSelection.Add(product, 1);
+                }
+                else
+                {
+                    productSelection[product] = productSelection[product] + 1;
+                }
+            }
+
+            ShopEntities dbShop = new ShopEntities();
+            List<Product> selectedProducts = new List<Product>();
+
+            foreach (Product product in dbShop.Products)
+            {
+                if (productSelection.ContainsKey(product.id))
+                {
+                    Product temp = new Product();
+                    temp.id = product.id;
+                    temp.Picture = product.Picture;                  
+                    selectedProducts.Add(temp);
+                }
+            }
+
+            RV_Products.DataSource = selectedProducts;
+            RV_Products.DataBind();
+        }
 
         //public int Summa()
         //{

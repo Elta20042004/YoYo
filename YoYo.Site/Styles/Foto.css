@@ -1,0 +1,35 @@
+﻿body {
+}
+
+div.content-panel {
+    overflow: visible;
+    position: relative;
+}
+
+.content_product_images {
+    float: left;
+    width: 300px;
+    margin-right: 42px;
+}
+
+div.content_product_details {
+    height: auto;
+    float: left;
+    color: #666;
+    width: 330px;
+}
+
+div.content_product_details div.product-buttons {
+display: inline-block;
+overflow: hidden;
+position: relative;
+width: 330px;
+}
+
+div.labelDescription1 {
+    height: auto;
+    float: left;
+    color: #666;
+    width: 330px;
+}
+

@@ -32,10 +32,10 @@
     <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="Price" />
     <Property Type="Int32" Name="Color" Nullable="false" />
-    <Property Type="String" Name="PictureBig" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Type="Int32" Name="CategoryId" />
-    <Property Type="String" Name="PictureSmall" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Type="Int32" Name="KategoryID" />
+    <Property Type="String" Name="Descriprion" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Picture" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

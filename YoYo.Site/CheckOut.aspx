@@ -24,25 +24,13 @@
         <ItemTemplate>
             <%--<td id="Td2" runat="server">--%>
             <table width="900" runat="server">
-                <thead>
-                    <tr>
-                        <th class="description">
-                            <div>ITEM DESCRIPTION</div>
-                        </th>
-                        <th class="options">
-                            <div>YOUR OPTIONS</div>
-                        </th>
-                        <th class="price">
-                            <div>PRICE</div>
-                        </th>
-                    </tr>
-                </thead>
+                
                 <tbody>
                     <tr>
                         <td>
                             <div>
                                 <a href='foto.aspx?productID=<%# Eval("id") %>'>
-                                    <image src='<%# Eval("PictureBig") %>' width="40" height="80" border="0">
+                                    <image src='Images/Products/Icon/<%# Eval("Picture") %>' border="0">
                                 </a>
                             </div>
                         </td>
@@ -61,7 +49,6 @@
                                     <%# Eval("Price", "{0:c}")%>
                                 </span>
                                 <br />
-                                <a href='AddToCart.aspx?productID=<%# Eval("id") %>'><span class="ProductListItem"><b>Add To Cart<b></font></span> </a>
                                 <asp:Button ID="Button1" runat="server" Text="Remove"
                                     CommandName="Remove" CommandArgument='<%# Eval("id") %>'
                                     OnCommand="Remove_Command" />
@@ -69,7 +56,7 @@
                         </td>
                         <td>
                             <div>
-                                </a><span class="ProductListItem"><b>Quantity: </b>
+                                </a><span class="ProductListItem">
                                     <%# Eval("Quantity", "{0:c}")%>
                                 </span>
                             </div>
@@ -78,32 +65,7 @@
                     </tr>
 
                 </tbody>
-                <%-- <tr>
-                        <td>
-                            <tr>
-                                <a href='foto.aspx?productID=<%# Eval("id") %>'>
-                                    <image src='<%# Eval("PictureBig") %>' width="150" height="280" border="0">
-                                </a>--%>
-                <%--<div style="font-size: xx-small" runat="server">
-                                    <a href='ProductDetails.aspx?productID=<%# Eval("id") %>'><span class="ProductListHead">
-                                        <%# Eval("Name")%>
-                                    </span>
-                                        <br>--%>
-                <%-- </a><span class="ProductListItem"><b>Special Price: </b>
-                                        <%# Eval("Price", "{0:c}")%>
-                                    </span>
-                                    <br />--%>
-                <%-- <a href='AddToCart.aspx?productID=<%# Eval("id") %>'><span class="ProductListItem"><b>
-                                        Add To Cart<b></font></span> </a>
-                                    <asp:Button ID="Remove" runat="server" Text="Remove" 
-                                        CommandName="Remove" CommandArgument='<%# Eval("id") %>' 
-                                        OnCommand="Remove_Command"/>--%>
-                <%--       </div>                                                                                                
-                            </tr>
-                        </td>
-                    </tr>--%>
             </table>
-            <%-- </td>--%>
         </ItemTemplate>
         <LayoutTemplate>
             <table id="Table2" runat="server">

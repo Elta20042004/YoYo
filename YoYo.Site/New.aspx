@@ -6,9 +6,9 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main">
-        <table width="920" border="1" cellspacing="0" cellpadding="10">
-            <tr bgcolor="oldlace">
-                <td height="400" class="style2" valign="top">
+        <table width="920" border="0" cellspacing="0" cellpadding="10" style="background-color:white">
+            <tr style="background-color:white">
+                <td height="400" class="style2" valign="top" style="background-color:white">
                     <div>
                         <asp:CheckBoxList AutoPostBack="true" ID="Color" runat="server" OnSelectedIndexChanged="Color_OnSelectedIndexChanged">
                             <asp:ListItem Value="145">blue</asp:ListItem>
@@ -44,10 +44,8 @@
                                         <tr>
                                             <td>
                                                 <tr>
-                                                    <a href='foto.aspx?productID=<%# Eval("id") %>'>
-                                                        <%--<image src='Catalog/Images/Thumbs/<%# Eval("ProductImage") %>' width="100" height="75"
-                                                        border="0">--%>
-                                                        <image src='<%# Eval("PictureBig") %>' width="150" height="280" border="0">
+                                                    <a href='foto.aspx?productID=<%# Eval("id") %>'>                                                        
+                                                        <image src='Images/Products/Small/<%# Eval("Picture") %>' border="0">
                                                     </a>
                                                     <div style="font-size: xx-small">
                                                         <a href='ProductDetails.aspx?productID=<%# Eval("id") %>'><span class="ProductListHead">

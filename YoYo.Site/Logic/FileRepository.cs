@@ -11,28 +11,28 @@ namespace WebApplication4.Logic
     {
         const string FileName =@"D:\ser.xml";
 
-        public List<int> GetProducts()
+        public CookieData GetCookieData()
         {
             if (!File.Exists(FileName))
             {
-                return new List<int>();
+                return new CookieData();
             }
 
-            List<int> result ;
+            CookieData result;
             using (var str = File.OpenRead(FileName))
             {
-                XmlSerializer x = new XmlSerializer((new List<int>()).GetType());
-                result = x.Deserialize(str) as List<int>;
+                XmlSerializer x = new XmlSerializer((new CookieData()).GetType());
+                result = x.Deserialize(str) as CookieData;
             }
             return result;
         }
 
-        public void PutProducts(List<int> products)
+        public void PutCookieData(CookieData products)
         {
-            List<int> result;
+            CookieData result;
             using (var str = File.Create(FileName))
             {
-                XmlSerializer x = new XmlSerializer((new List<int>()).GetType());
+                XmlSerializer x = new XmlSerializer((new CookieData()).GetType());
                 x.Serialize(str, products);
             }
         }

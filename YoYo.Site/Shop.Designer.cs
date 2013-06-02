@@ -404,30 +404,6 @@ namespace WebApplication4
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String PictureBig
-        {
-            get
-            {
-                return _PictureBig;
-            }
-            set
-            {
-                OnPictureBigChanging(value);
-                ReportPropertyChanging("PictureBig");
-                _PictureBig = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("PictureBig");
-                OnPictureBigChanged();
-            }
-        }
-        private global::System.String _PictureBig;
-        partial void OnPictureBigChanging(global::System.String value);
-        partial void OnPictureBigChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 id
@@ -481,30 +457,6 @@ namespace WebApplication4
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String PictureSmall
-        {
-            get
-            {
-                return _PictureSmall;
-            }
-            set
-            {
-                OnPictureSmallChanging(value);
-                ReportPropertyChanging("PictureSmall");
-                _PictureSmall = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("PictureSmall");
-                OnPictureSmallChanged();
-            }
-        }
-        private global::System.String _PictureSmall;
-        partial void OnPictureSmallChanging(global::System.String value);
-        partial void OnPictureSmallChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Int32> KategoryID
         {
             get
@@ -523,6 +475,54 @@ namespace WebApplication4
         private Nullable<global::System.Int32> _KategoryID;
         partial void OnKategoryIDChanging(Nullable<global::System.Int32> value);
         partial void OnKategoryIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Descriprion
+        {
+            get
+            {
+                return _Descriprion;
+            }
+            set
+            {
+                OnDescriprionChanging(value);
+                ReportPropertyChanging("Descriprion");
+                _Descriprion = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Descriprion");
+                OnDescriprionChanged();
+            }
+        }
+        private global::System.String _Descriprion;
+        partial void OnDescriprionChanging(global::System.String value);
+        partial void OnDescriprionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Picture
+        {
+            get
+            {
+                return _Picture;
+            }
+            set
+            {
+                OnPictureChanging(value);
+                ReportPropertyChanging("Picture");
+                _Picture = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Picture");
+                OnPictureChanged();
+            }
+        }
+        private global::System.String _Picture;
+        partial void OnPictureChanging(global::System.String value);
+        partial void OnPictureChanged();
 
         #endregion
 

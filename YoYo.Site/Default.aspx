@@ -51,11 +51,7 @@
                         </div>
                     </div>
                 </td>
-            </tr>
-            <tr bgcolor="darkred">
-                <td colspan="2" height="30">низ сайта
-                </td>
-            </tr>
+            </tr>           
         </table>
     </div>
 </asp:Content>

@@ -10,10 +10,13 @@ namespace WebApplication4
 {
     public partial class Foto : System.Web.UI.Page
     {
-        ProductManager _productManager;
+        CartManager _productManager;
+        RecentlyViewedManager _rvManager;
         public Foto()
         {
-            _productManager = new ProductManager(new FileRepository());
+            var repository = new FileRepository();
+            _productManager = new CartManager(repository);
+            _rvManager = new RecentlyViewedManager(repository);
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,10 +31,13 @@ namespace WebApplication4
                 products = products.Where(t => t.id == productId);
 
                 Product One = products.First();
-                imageBigPicture.ImageUrl = One.PictureBig;
+                imageBigPicture.ImageUrl ="Images/Products/Big/"+One.Picture;
                 labelProdectName.Text = One.Name;
                 labelDescription.Text = One.Price.ToString();
+                labelDescription1.Text = One.Descriprion;
                 HttpContext.Current.Session.Add("productID", One.id.ToString());
+                _rvManager.AddProduct(productId);
+
             }                    
         }
 

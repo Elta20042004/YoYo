@@ -7,12 +7,12 @@ namespace WebApplication4.Logic
 {
     public class CookieRepository : IProductRepository
     {
-        public List<int> GetProducts()
+        public CookieData GetCookieData()
         {
             throw new NotImplementedException();
         }
 
-        public void PutProducts(List<int> products)
+        public void PutCookieData(CookieData products)
         {
 
         }
