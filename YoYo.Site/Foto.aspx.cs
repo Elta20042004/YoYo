@@ -14,7 +14,7 @@ namespace WebApplication4
         RecentlyViewedManager _rvManager;
         public Foto()
         {
-            var repository = new FileRepository();
+            var repository = new CookieRepository();
             _productManager = new CartManager(repository);
             _rvManager = new RecentlyViewedManager(repository);
         }

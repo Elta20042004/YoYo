@@ -5,7 +5,7 @@ using System.Web;
 
 namespace WebApplication4.Logic
 {
-    public class CookieData
+    public class CookieData : XmlSerializable<CookieData>
     {
         public List<int> Cart { get; set; }
 

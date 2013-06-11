@@ -16,7 +16,7 @@ namespace WebApplication4
 
         public CheckOut()
         {
-            _productManager = new CartManager(new FileRepository());
+            _productManager = new CartManager(new CookieRepository());
         }
         public static Product New;
         //public static List<Product> CheckOutProducts = new List<Product>();

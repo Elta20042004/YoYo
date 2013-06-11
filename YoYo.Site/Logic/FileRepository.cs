@@ -21,8 +21,7 @@ namespace WebApplication4.Logic
             CookieData result;
             using (var str = File.OpenRead(FileName))
             {
-                XmlSerializer x = new XmlSerializer((new CookieData()).GetType());
-                result = x.Deserialize(str) as CookieData;
+                result = CookieData.Deserialize(str);
             }
             return result;
         }
@@ -30,10 +29,9 @@ namespace WebApplication4.Logic
         public void PutCookieData(CookieData products)
         {
             CookieData result;
-            using (var str = File.Create(FileName))
+            using (var stream = File.Create(FileName))
             {
-                XmlSerializer x = new XmlSerializer((new CookieData()).GetType());
-                x.Serialize(str, products);
+                products.Serialize(stream);
             }
         }
     }

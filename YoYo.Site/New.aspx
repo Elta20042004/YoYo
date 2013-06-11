@@ -2,15 +2,20 @@
     CodeBehind="New.aspx.cs" Inherits="WebApplication4.New" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            width: 138px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main">
-        <table width="920" border="0" cellspacing="0" cellpadding="10" style="background-color:white">
+        <table border="0" cellspacing="0" cellpadding="10" style="background-color:white">
             <tr style="background-color:white">
-                <td height="400" class="style2" valign="top" style="background-color:white">
-                    <div>
-                        <asp:CheckBoxList AutoPostBack="true" ID="Color" runat="server" OnSelectedIndexChanged="Color_OnSelectedIndexChanged">
+                <td class="auto-style1" valign="top" style="background-color:white">
+                    <div style="background-position: -70px 3px;color: #666;cursor: pointer; text-align:left; width: 130px;" >
+                        <asp:CheckBoxList AutoPostBack="true" ID="Color" runat="server" OnSelectedIndexChanged="Color_OnSelectedIndexChanged" >
                             <asp:ListItem Value="145">blue</asp:ListItem>
                             <asp:ListItem Value="140">yellow</asp:ListItem>
                             <asp:ListItem Value="138">black</asp:ListItem>
@@ -40,15 +45,15 @@
                             </GroupTemplate>
                             <ItemTemplate>
                                 <td id="Td2" runat="server">
-                                    <table border="0" width="170">
+                                    <table border="0" ><%--width="170"--%>
                                         <tr>
                                             <td>
                                                 <tr>
                                                     <a href='foto.aspx?productID=<%# Eval("id") %>'>                                                        
                                                         <image src='Images/Products/Small/<%# Eval("Picture") %>' border="0">
                                                     </a>
-                                                    <div style="font-size: xx-small">
-                                                        <a href='ProductDetails.aspx?productID=<%# Eval("id") %>'><span class="ProductListHead">
+                                                    <div style="font-size: xx-small" >
+                                                        <a span='ProductDetails.aspx?productID=<%# Eval("id") %>'><span class="ProductListHead">
                                                             <%# Eval("Name")%>
                                                         </span>
                                                             <br>
@@ -80,10 +85,6 @@
                             </LayoutTemplate>
                         </asp:ListView>
                     </h1>
-                </td>
-            </tr>
-            <tr bgcolor="darkred">
-                <td colspan="2" height="30">низ сайта
                 </td>
             </tr>
         </table>

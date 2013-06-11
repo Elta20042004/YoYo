@@ -30,11 +30,11 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main">
-        <table width="920" border="0" cellspacing="0" cellpadding="10">
+        <table border="0" cellspacing="0" cellpadding="10">
             <tr>
                 <td class="auto-style1" valign="top">
                     <div>
-                        <asp:Menu ID="menuBar" runat="server" Orientation="Vertical" Width="100">
+                        <asp:Menu ID="menuBar" runat="server" Orientation="Vertical">
                         </asp:Menu>
                     </div>
                 </td>

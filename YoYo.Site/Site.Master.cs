@@ -14,7 +14,7 @@ namespace WebApplication4
         RecentlyViewedManager _rvManager;
         public SiteMaster()
         {
-            var repository = new FileRepository();
+            var repository = new CookieRepository();
             _productManager = new CartManager(repository);
             _rvManager = new RecentlyViewedManager(repository);
         }
@@ -32,12 +32,16 @@ namespace WebApplication4
             }
 
             Bag.Text = "Bag " + "(" + _productManager.Summa().ToString() + "$" +")";
-            Refrash();
+            Refresh();
         }
 
-        protected void Refrash()
+        protected void Refresh()
         {
             IList<int> selectedProductId = _rvManager.GetProducts();
+            if (selectedProductId == null)
+            {
+                return;
+            }
             Dictionary<int, int> productSelection = new Dictionary<int, int>();
             foreach (int product in selectedProductId)
             {

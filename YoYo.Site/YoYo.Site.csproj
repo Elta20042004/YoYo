@@ -167,6 +167,7 @@
     <Compile Include="Logic\FileRepository.cs" />
     <Compile Include="Logic\IProductRepository.cs" />
     <Compile Include="Logic\CartManager.cs" />
+    <Compile Include="Logic\XmlSerializable.cs" />
     <Compile Include="New.aspx.cs">
       <DependentUpon>New.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

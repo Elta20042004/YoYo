@@ -8,6 +8,8 @@
     <%--<link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />--%>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+</head>
+<head>
     <style type="text/css">
         .style1 {
             width: 677px;
@@ -21,8 +23,79 @@
             z-index: 9999;
         }
     </style>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>- jsFiddle demo</title>
+
+    <script type='text/javascript' src='http://code.jquery.com/jquery-1.6.2.js'></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+    <style type='text/css'>
+        a, a:active, a:visited {
+            color: #1d1d1d;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+        <%--<script type='text/javascript'>//<![CDATA[ 
+            $(window).load(function(){
+                $('#NavigationMenu a').click(function(){
+                    $('#NavigationMenu a').css("textDecoration", "none"); 
+                    $('#NavigationMenu span').css("textDecoration", "none"); 
+                    $(this).css('textDecoration', 'underline');
+                    return false;
+                });
+            });//]]>  
+    </script>
+
+    <script type='text/javascript'>//<![CDATA[ 
+        $(window).load(function(){
+            $('#NavigationMenu span').click(function(){
+                $('#NavigationMenu a').css("textDecoration", "none"); 
+                $('#NavigationMenu span').css("textDecoration", "none"); 
+                $(this).css('textDecoration', 'underline');
+                return false;
+            });
+        });//]]>  
+    </script>--%>
+
+
+    <script type='text/javascript'>//<![CDATA[ 
+            $(window).load(function(){
+                $('a.Underlined').click(function(){
+                    $('a.Underlined').css("textDecoration", "none"); 
+                    $(this).css('textDecoration', 'underline');
+                    return false;
+                });
+            });//]]>  
+    </script>
+
+    <script type='text/javascript'>//<![CDATA[ 
+        $(window).load(function(){
+            $('#nav a').click(function(){
+                $('#nav a').css("textDecoration", "none"); 
+                $(this).css('textDecoration', 'underline');
+                return false;
+            });
+        });//]]>  
+    </script>
 </head>
+
+
 <body>
+    <div id="nav">
+        <a href="#about" id="nav_about">ABOUT</a><br />
+        <a href="#pictures" id="nav_pictures">PICTURES</a><br />
+        <a href="#contact" id="nav_contact">CONTACT</a>
+    </div>
+
+
     <div class="div-front">
         <script type="text/javascript">
             function menuClick() 
@@ -50,8 +123,8 @@
 
                             <Items>
 
-                                <asp:MenuItem NavigateUrl="~/Default.aspx"
-                                    Text="<span style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories<span>">
+                                <asp:MenuItem  NavigateUrl="~/Default.aspx"
+                                    Text="<a class = 'Underlined' style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories</a>">
                                     <asp:MenuItem Value="New in Accessories" Text="New in ozhirele" />
                                     <asp:MenuItem Value="New in Accessories" Text="New in earrings" />
                                     <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
@@ -59,7 +132,7 @@
                                     <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
                                     <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
                                 </asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Accessories">
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="<a class = 'Underlined'>Accessories</a>">
                                     <asp:MenuItem Value="New in Accessories" Text="ozhirele" />
                                     <asp:MenuItem Value="New in Accessories" Text="earrings" />
                                     <asp:MenuItem Value="New in Accessories" Text="bracelet" />
@@ -95,24 +168,18 @@
 
                         <ItemTemplate>
                             <%--<td id="Td2" runat="server">--%>
-                            <div>
-                                <a href='foto.aspx?productID=<%# Eval("id") %>'>
-                                    <image src='Images/Products/Icon/<%# Eval("Picture") %>' border="0">
-                                </a>
-                            </div>
+                            <td>
+                                <div>
+                                    <a href='foto.aspx?productID=<%# Eval("id") %>'>
+                                        <image src='Images/Products/Icon/<%# Eval("Picture") %>' border="0">
+                                    </a>
+                                </div>
+                            </td>
                         </ItemTemplate>
                         <LayoutTemplate>
-                            <table id="Table2" runat="server">
-                                <tr id="Tr1" runat="server">
-                                    <td id="Td3" runat="server">
-                                        <table id="itemPlaceholderContainer" runat="server">
-                                            <tr id="itemPlaceholder" runat="server">
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                                <tr id="Tr2" runat="server">
-                                    <td id="Td4" runat="server"></td>
+                            <table>
+                                <tr>
+                                    <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
                                 </tr>
                             </table>
                         </LayoutTemplate>
