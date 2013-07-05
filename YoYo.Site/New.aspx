@@ -11,11 +11,11 @@
 
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <div class="main">
-        <table border="0" cellspacing="0" cellpadding="10" style="background-color:white">
+        <table   style="background-color:white; border:0px; margin:0px">
             <tr style="background-color:white">
-                <td class="auto-style1" valign="top" style="background-color:white">
-                    <div style="background-position: -70px 3px;color: #666;cursor: pointer; text-align:left; width: 130px;" >
-                        <asp:CheckBoxList AutoPostBack="true" ID="Color" runat="server" OnSelectedIndexChanged="Color_OnSelectedIndexChanged" >
+                <td class="auto-style1" valign="top" style="background-color:white; width:60px; margin:0px 10px 0px 0px;">
+                    <div style="text-align:left" >
+                        <asp:CheckBoxList AutoPostBack="true" ID="Color" runat="server" OnSelectedIndexChanged="Color_OnSelectedIndexChanged" Width="75px" >
                             <asp:ListItem Value="145">blue</asp:ListItem>
                             <asp:ListItem Value="140">yellow</asp:ListItem>
                             <asp:ListItem Value="138">black</asp:ListItem>

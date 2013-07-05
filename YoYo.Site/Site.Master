@@ -22,6 +22,44 @@
         .div-front {
             z-index: 9999;
         }
+
+  
+        
+        
+        #panelTitle
+  {
+	cursor:pointer;
+	/*left: 1050px;
+    top: 50px;*/
+    position: absolute;
+	color : black;
+     z-index: 10060;
+     text-align: right;
+  }
+  #panel
+  {	
+	
+	width: 250px;
+	height: 250px;
+	background-clip: padding-box;
+    background-color: #FFF;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    left: 60%;
+    top: 10%;
+    margin-left: 20px;
+    margin-top: 110px;
+    outline: medium none;
+    z-index: 10050;
+	
+ 
+
+    position: absolute;
+	border : 1px solid black;
+	overflow : hidden;
+  }
+  
     </style>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -42,30 +80,7 @@
             a:hover {
                 text-decoration: underline;
             }
-    </style>
-        <%--<script type='text/javascript'>//<![CDATA[ 
-            $(window).load(function(){
-                $('#NavigationMenu a').click(function(){
-                    $('#NavigationMenu a').css("textDecoration", "none"); 
-                    $('#NavigationMenu span').css("textDecoration", "none"); 
-                    $(this).css('textDecoration', 'underline');
-                    return false;
-                });
-            });//]]>  
-    </script>
-
-    <script type='text/javascript'>//<![CDATA[ 
-        $(window).load(function(){
-            $('#NavigationMenu span').click(function(){
-                $('#NavigationMenu a').css("textDecoration", "none"); 
-                $('#NavigationMenu span').css("textDecoration", "none"); 
-                $(this).css('textDecoration', 'underline');
-                return false;
-            });
-        });//]]>  
-    </script>--%>
-
-
+    </style>      
     <script type='text/javascript'>//<![CDATA[ 
             $(window).load(function(){
                 $('a.Underlined').click(function(){
@@ -85,6 +100,62 @@
             });
         });//]]>  
     </script>
+
+     
+    
+    <script type="text/javascript">
+	
+         var step = 0;
+
+         function Move()
+         {
+             var panel = document.getElementById('panel');
+             var h = panel.clientHeight + step;
+             panel.style.height = h + "px";		
+		
+             if (h+step <= panel.originalHeight && h+step>=0 && step !=0)
+             {
+			
+                 setTimeout("Move()",5);	
+             }
+             else 
+             {
+                 if (h+step<0)
+                 {
+                     panel.style.display = "none";		
+                 }
+                 step = 0;
+             }
+         }
+         function execMove(nextMove)
+         {
+             var startMove = true;
+             if (step != 0)
+             {
+                 startMove= false;
+             }
+             step = nextMove;
+             if (startMove)
+             {
+                 Move();
+             }
+         }
+  
+         function expandPanel()
+         {
+             panel.style.display = "";
+             execMove(5);
+         }
+   
+         function collapsePanel() 
+         {
+             execMove(-5);
+         }
+  
+
+  </script>
+
+
 </head>
 
 
@@ -144,15 +215,18 @@
 
                         <div class="div-front">
                             <asp:HyperLink ForeColor="Black" ID="Bag" runat="server" NavigateUrl="~/CheckOut.aspx">Bag</asp:HyperLink>
-
+                            <a href="JavaScript:expandPanel()" id="panelTitle">Bag</a>
+                            <div id="panel">
+		                         Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.
+	                        </div>
                         </div>
+
                     </div>
                 </div>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
                 <div class="clear div-front">
 
-                    <%--<div >--%>
                     <asp:ListView ID="RV_Products" runat="server" DataKeyNames="id">
                         <EmptyDataTemplate>
                             <table id="Table1" runat="server">
@@ -167,12 +241,12 @@
                         </EmptyItemTemplate>
 
                         <ItemTemplate>
-                            <%--<td id="Td2" runat="server">--%>
                             <td>
                                 <div>
                                     <a href='foto.aspx?productID=<%# Eval("id") %>'>
                                         <image src='Images/Products/Icon/<%# Eval("Picture") %>' border="0">
                                     </a>
+                                    	
                                 </div>
                             </td>
                         </ItemTemplate>
@@ -202,6 +276,19 @@
 
 
 
+		
+
+
+	<script type="text/javascript">
+	    var panel = document.getElementById('panel');
+	    panel.originalHeight = 250;
+	    panel.style.height = "0px";		
+	    panel.style.display = "none";		
+	    document.getElementById('panelTitle').onmouseover = expandPanel;
+	    document.getElementById('panelTitle').onmouseout = collapsePanel;
+	    document.getElementById('panel').onmouseover = expandPanel;
+	    document.getElementById('panel').onmouseout = collapsePanel;
+	</script>
 
 </body>
 </html>
