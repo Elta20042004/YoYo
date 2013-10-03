@@ -51,7 +51,7 @@ namespace WebApplication4.Logic
                 }
                 value = zipped.ToArray();
             }
-
+            
             var session = HttpContext.Current.Session;
             session["data"] = value;
         }

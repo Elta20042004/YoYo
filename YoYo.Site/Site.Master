@@ -23,43 +23,37 @@
             z-index: 9999;
         }
 
-  
-        
-        
-        #panelTitle
-  {
-	cursor:pointer;
-	/*left: 1050px;
-    top: 50px;*/
-    position: absolute;
-	color : black;
-     z-index: 10060;
-     text-align: right;
-  }
-  #panel
-  {	
-	
-	width: 250px;
-	height: 250px;
-	background-clip: padding-box;
-    background-color: #FFF;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    left: 60%;
-    top: 10%;
-    margin-left: 20px;
-    margin-top: 110px;
-    outline: medium none;
-    z-index: 10050;
-	
- 
 
-    position: absolute;
-	border : 1px solid black;
-	overflow : hidden;
-  }
-  
+
+
+        #panelTitle {
+            cursor: pointer;
+            /*left: 1050px;
+    top: 50px;*/
+            position: absolute;
+            color: black;
+            z-index: 10060;
+            text-align: right;
+        }
+
+        #panel {
+            width: 250px;
+            height: 250px;
+            background-clip: padding-box;
+            background-color: #FFF;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            left: 60%;
+            top: 10%;
+            margin-left: 20px;
+            margin-top: 110px;
+            outline: medium none;
+            z-index: 10050;
+            position: absolute;
+            border: 1px solid black;
+            overflow: auto;
+        }
     </style>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -80,98 +74,158 @@
             a:hover {
                 text-decoration: underline;
             }
-    </style>      
+    </style>
     <script type='text/javascript'>//<![CDATA[ 
-            $(window).load(function(){
-                $('a.Underlined').click(function(){
-                    $('a.Underlined').css("textDecoration", "none"); 
-                    $(this).css('textDecoration', 'underline');
-                    return false;
-                });
-            });//]]>  
-    </script>
-
-    <script type='text/javascript'>//<![CDATA[ 
-        $(window).load(function(){
-            $('#nav a').click(function(){
-                $('#nav a').css("textDecoration", "none"); 
+        $(window).load(function () {
+            $('a.Underlined').click(function () {
+                $('a.Underlined').css("textDecoration", "none");
                 $(this).css('textDecoration', 'underline');
                 return false;
             });
         });//]]>  
     </script>
 
-     
-    
+    <script type='text/javascript'>//<![CDATA[ 
+        $(window).load(function () {
+            $('#nav a').click(function () {
+                $('#nav a').css("textDecoration", "none");
+                $(this).css('textDecoration', 'underline');
+                return false;
+            });
+        });//]]>  
+    </script>
+
+
+
     <script type="text/javascript">
-	
-         var step = 0;
 
-         function Move()
-         {
-             var panel = document.getElementById('panel');
-             var h = panel.clientHeight + step;
-             panel.style.height = h + "px";		
-		
-             if (h+step <= panel.originalHeight && h+step>=0 && step !=0)
-             {
-			
-                 setTimeout("Move()",5);	
-             }
-             else 
-             {
-                 if (h+step<0)
-                 {
-                     panel.style.display = "none";		
-                 }
-                 step = 0;
-             }
-         }
-         function execMove(nextMove)
-         {
-             var startMove = true;
-             if (step != 0)
-             {
-                 startMove= false;
-             }
-             step = nextMove;
-             if (startMove)
-             {
-                 Move();
-             }
-         }
-  
-         function expandPanel()
-         {
-             panel.style.display = "";
-             execMove(5);
-         }
-   
-         function collapsePanel() 
-         {
-             execMove(-5);
-         }
-  
+        var step = 0;
 
-  </script>
+        function Move() {
+
+
+
+            var panel = document.getElementById('panel');
+            var h = panel.clientHeight + step;
+            panel.style.height = h + "px";
+
+            if (h > 700) {
+                var i = 5;
+            }
+            if (h + step <= panel.originalHeight && h + step >= 0 && step != 0) {
+
+                setTimeout("Move()", 5);
+            }
+            else {
+                if (h + step < 0) {
+                    panel.style.display = "none";
+                }
+                step = 0;
+            }
+        }
+        function execMove(nextMove) {
+            var startMove = true;
+            if (step != 0) {
+                startMove = false;
+            }
+            step = nextMove;
+            if (startMove) {
+                Move();
+            }
+        }
+
+        function expandPanel() {
+            panel.style.display = "";
+            if (panel.clientHeight + step <= panel.originalHeight) {
+                execMove(5);
+            }
+        }
+
+        function collapsePanel() {
+            execMove(-5);
+        }
+
+
+        function getCart() {
+            var cartStr = localStorage.getItem("Cart");
+            var cart;
+            if (cartStr == null) {
+                cart = [];
+            } else {
+                cart = JSON.parse(cartStr);
+            }
+            return cart;
+        }
+
+        function setCart(cart) {
+            cartStr = JSON.stringify(cart);
+            localStorage.setItem("Cart", cartStr);
+        }
+
+        function show() {
+            var cart = getCart();
+            var table = document.getElementById('panel');
+            table.innerHTML = '';
+            table.originalHeight = Math.min(cart.length, 5) * 105;
+            for (var i = 0, tr, td; i < cart.length; i++) {
+                tr = document.createElement('tr');
+                td = document.createElement('td');
+                var image = document.createElement('image');
+                image.src = cart[i].image;
+                image.height = 100;
+                image.width = 80;
+                td.appendChild(image);
+                td.appendChild(document.createTextNode(cart[i].name));
+                td.appendChild(document.createTextNode(cart[i].description));
+
+                tr.appendChild(td);
+                table.appendChild(tr);
+
+            }
+
+            if (cart.length > 0) {
+                expandPanel();
+            }
+        }
+
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        function addToCart() {
+            var product = new Object();
+            product.id = getParameterByName('productID');
+            product.image = document.getElementById('MainContent_imageBigPicture').getAttribute('src');
+            product.name = $('#MainContent_labelProdectName').text();
+            product.description = $('#MainContent_labelDescription').text();
+            product.description1 = $('#MainContent_labelDescription1').text();
+
+            var cart = getCart();
+            cart.push(product);
+            setCart(cart);
+            show();
+        }
+    </script>
 
 
 </head>
 
 
 <body>
-    <div id="nav">
+    <%--    <div id="nav">
         <a href="#about" id="nav_about">ABOUT</a><br />
         <a href="#pictures" id="nav_pictures">PICTURES</a><br />
         <a href="#contact" id="nav_contact">CONTACT</a>
-    </div>
+    </div>--%>
 
 
     <div class="div-front">
         <script type="text/javascript">
-            function menuClick() 
-            {        
-                document.getElementById("NavigationMenu").style.textDecoration:underline;    
+            function menuClick() {
+                document.getElementById("NavigationMenu").style.textDecoration = "underline";
             }
         </script>
 
@@ -191,34 +245,18 @@
                         <asp:Menu CssClass="menu" ID="NavigationMenu" runat="server" EnableViewState="false"
                             IncludeStyleBlock="false" Orientation="Horizontal"
                             OnMenuItemClick="NavigationMenu_MenuItemClick">
-
                             <Items>
-
-                                <asp:MenuItem  NavigateUrl="~/Default.aspx"
-                                    Text="<a class = 'Underlined' style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories</a>">
-                                    <asp:MenuItem Value="New in Accessories" Text="New in ozhirele" />
-                                    <asp:MenuItem Value="New in Accessories" Text="New in earrings" />
-                                    <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
-                                    <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
-                                    <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
-                                    <asp:MenuItem Value="New in Accessories" Text="New in bracelet" />
-                                </asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="<a class = 'Underlined'>Accessories</a>">
-                                    <asp:MenuItem Value="New in Accessories" Text="ozhirele" />
-                                    <asp:MenuItem Value="New in Accessories" Text="earrings" />
-                                    <asp:MenuItem Value="New in Accessories" Text="bracelet" />
-                                </asp:MenuItem>
-
+                                <asp:MenuItem
+                                    Text="<a class = 'Underlined' style='cursor:pointer;' onclick='javascript:menuClick();'>New in Accessories</a>"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="<a class = 'Underlined'>Accessories</a>"></asp:MenuItem>
                             </Items>
-
                         </asp:Menu>
 
                         <div class="div-front">
                             <asp:HyperLink ForeColor="Black" ID="Bag" runat="server" NavigateUrl="~/CheckOut.aspx">Bag</asp:HyperLink>
-                            <a href="JavaScript:expandPanel()" id="panelTitle">Bag</a>
+                            <a href="JavaScript:show()" id="panelTitle">Bag</a>
                             <div id="panel">
-		                         Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.Вниманию образовательных учреждений, проводящих экзамен по русскому языку в 9-х классах в традиционной форме. Материалы будут доступны.
-	                        </div>
+                            </div>
                         </div>
 
                     </div>
@@ -246,7 +284,7 @@
                                     <a href='foto.aspx?productID=<%# Eval("id") %>'>
                                         <image src='Images/Products/Icon/<%# Eval("Picture") %>' border="0">
                                     </a>
-                                    	
+
                                 </div>
                             </td>
                         </ItemTemplate>
@@ -276,19 +314,19 @@
 
 
 
-		
 
 
-	<script type="text/javascript">
-	    var panel = document.getElementById('panel');
-	    panel.originalHeight = 250;
-	    panel.style.height = "0px";		
-	    panel.style.display = "none";		
-	    document.getElementById('panelTitle').onmouseover = expandPanel;
-	    document.getElementById('panelTitle').onmouseout = collapsePanel;
-	    document.getElementById('panel').onmouseover = expandPanel;
-	    document.getElementById('panel').onmouseout = collapsePanel;
-	</script>
+
+    <script type="text/javascript">
+        var panel = document.getElementById('panel');
+        panel.originalHeight = 250;
+        panel.style.height = "0px";
+        panel.style.display = "none";
+        document.getElementById('panelTitle').onmouseover = show;
+        document.getElementById('panelTitle').onmouseout = collapsePanel;
+        document.getElementById('panel').onmouseover = show;
+        document.getElementById('panel').onmouseout = collapsePanel;
+    </script>
 
 </body>
 </html>

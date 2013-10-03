@@ -11,11 +11,9 @@ namespace WebApplication4
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {           
+        {
             ShopEntities dbShop = new ShopEntities();
-
             IEnumerable<Product> products = dbShop.Products;
-            
             foreach (var category in dbShop.Categories)
             {
                 var menuItem = new MenuItem(category.Name, category.id.ToString(), "", category.NavigateUrl);
@@ -23,13 +21,9 @@ namespace WebApplication4
             }
         }
 
-        
-        
-       
-
         protected void ListView_Products_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }        
+        }
     }
 }

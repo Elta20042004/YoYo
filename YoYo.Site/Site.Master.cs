@@ -24,6 +24,7 @@ namespace WebApplication4
             
             ShopEntities dbShop = new ShopEntities();
 
+            NavigationMenu.Items[0].ChildItems.Clear();
             NavigationMenu.Items[1].ChildItems.Clear();
             foreach (var category in dbShop.Categories)
             {
