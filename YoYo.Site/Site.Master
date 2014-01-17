@@ -23,9 +23,6 @@
             z-index: 9999;
         }
 
-
-
-
         #panelTitle {
             cursor: pointer;
             /*left: 1050px;
@@ -65,6 +62,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/result-light.css">
 
+    <%--// **********underscore start****************************--%>
     <style type='text/css'>
         a, a:active, a:visited {
             color: #1d1d1d;
@@ -83,9 +81,6 @@
                 return false;
             });
         });//]]>  
-    </script>
-
-    <script type='text/javascript'>//<![CDATA[ 
         $(window).load(function () {
             $('#nav a').click(function () {
                 $('#nav a').css("textDecoration", "none");
@@ -94,127 +89,12 @@
             });
         });//]]>  
     </script>
-
-
-
-    <script type="text/javascript">
-
-        var step = 0;
-
-        function Move() {
-
-
-
-            var panel = document.getElementById('panel');
-            var h = panel.clientHeight + step;
-            panel.style.height = h + "px";
-
-            if (h > 700) {
-                var i = 5;
-            }
-            if (h + step <= panel.originalHeight && h + step >= 0 && step != 0) {
-
-                setTimeout("Move()", 5);
-            }
-            else {
-                if (h + step < 0) {
-                    panel.style.display = "none";
-                }
-                step = 0;
-            }
-        }
-        function execMove(nextMove) {
-            var startMove = true;
-            if (step != 0) {
-                startMove = false;
-            }
-            step = nextMove;
-            if (startMove) {
-                Move();
-            }
-        }
-
-        function expandPanel() {
-            panel.style.display = "";
-            if (panel.clientHeight + step <= panel.originalHeight) {
-                execMove(5);
-            }
-        }
-
-        function collapsePanel() {
-            execMove(-5);
-        }
-
-
-        function getCart() {
-            var cartStr = localStorage.getItem("Cart");
-            var cart;
-            if (cartStr == null) {
-                cart = [];
-            } else {
-                cart = JSON.parse(cartStr);
-            }
-            return cart;
-        }
-
-        function setCart(cart) {
-            cartStr = JSON.stringify(cart);
-            localStorage.setItem("Cart", cartStr);
-        }
-
-        function show() {
-            var cart = getCart();
-            var table = document.getElementById('panel');
-            table.innerHTML = '';
-            table.originalHeight = Math.min(cart.length, 5) * 105;
-            for (var i = 0, tr, td; i < cart.length; i++) {
-                tr = document.createElement('tr');
-                td = document.createElement('td');
-                var image = document.createElement('image');
-                image.src = cart[i].image;
-                image.height = 100;
-                image.width = 80;
-                td.appendChild(image);
-                td.appendChild(document.createTextNode(cart[i].name));
-                td.appendChild(document.createTextNode(cart[i].description));
-
-                tr.appendChild(td);
-                table.appendChild(tr);
-
-            }
-
-            if (cart.length > 0) {
-                expandPanel();
-            }
-        }
-
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-            return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
-
-        function addToCart() {
-            var product = new Object();
-            product.id = getParameterByName('productID');
-            product.image = document.getElementById('MainContent_imageBigPicture').getAttribute('src');
-            product.name = $('#MainContent_labelProdectName').text();
-            product.description = $('#MainContent_labelDescription').text();
-            product.description1 = $('#MainContent_labelDescription1').text();
-
-            var cart = getCart();
-            cart.push(product);
-            setCart(cart);
-            show();
-        }
-    </script>
-
-
+    <script type='text/javascript' src='Scripts/yoyo/localStorage.js' ></script>
 </head>
 
 
 <body>
+
     <%--    <div id="nav">
         <a href="#about" id="nav_about">ABOUT</a><br />
         <a href="#pictures" id="nav_pictures">PICTURES</a><br />
@@ -311,22 +191,9 @@
 
 
     </div>
+    <script type='text/javascript' src='Scripts/yoyo/bag.js' ></script>
 
-
-
-
-
-
-    <script type="text/javascript">
-        var panel = document.getElementById('panel');
-        panel.originalHeight = 250;
-        panel.style.height = "0px";
-        panel.style.display = "none";
-        document.getElementById('panelTitle').onmouseover = show;
-        document.getElementById('panelTitle').onmouseout = collapsePanel;
-        document.getElementById('panel').onmouseover = show;
-        document.getElementById('panel').onmouseout = collapsePanel;
-    </script>
-
+        
+    
 </body>
 </html>

@@ -72,9 +72,8 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="CheckOut.aspx" />
     <Content Include="Prod.aspx" />
-    <Content Include="Images\large.jpg" />
-    <Content Include="Images\monkey.jpg" />
-    <Content Include="Images\monks.jpg" />
+    <Content Include="Scripts\yoyo\bag.js" />
+    <Content Include="Scripts\yoyo\localStorage.js" />
     <Content Include="Shop.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\jquery.js" />
@@ -205,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />

@@ -1,0 +1,6 @@
+F:\Lena_Projects\YoYo\YoYo.Paypal\bin\Debug\YoYo.Paypal.exe.config
+F:\Lena_Projects\YoYo\YoYo.Paypal\bin\Debug\YoYo.Paypal.exe
+F:\Lena_Projects\YoYo\YoYo.Paypal\bin\Debug\YoYo.Paypal.pdb
+F:\Lena_Projects\YoYo\YoYo.Paypal\obj\Debug\YoYo.Paypal.csprojResolveAssemblyReference.cache
+F:\Lena_Projects\YoYo\YoYo.Paypal\obj\Debug\YoYo.Paypal.exe
+F:\Lena_Projects\YoYo\YoYo.Paypal\obj\Debug\YoYo.Paypal.pdb

@@ -19,11 +19,11 @@ namespace WebApplication4
             {
                 categoryID = int.Parse(HttpContext.Current.Request.QueryString["Category"]);                
             }
-            ListView_Products.DataSource = getCategoryProducts();
+            ListView_Products.DataSource = GetCategoryProducts();
             ListView_Products.DataBind();                       
         }
 
-        protected IEnumerable<Product> getCategoryProducts()
+        protected IEnumerable<Product> GetCategoryProducts()
         {
             ShopEntities dbShop = new ShopEntities();
 
@@ -49,7 +49,7 @@ namespace WebApplication4
                 }
             }
 
-            var colorProducts = getCategoryProducts().Where(t => selectedColors.Contains(t.Color));
+            var colorProducts = GetCategoryProducts().Where(t => selectedColors.Contains(t.Color));
             ListView_Products.DataSource = colorProducts;
             ListView_Products.DataBind();
         }
