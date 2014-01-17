@@ -90,6 +90,8 @@
         });//]]>  
     </script>
     <script type='text/javascript' src='Scripts/yoyo/localStorage.js' ></script>
+    <script type='text/javascript' src='Scripts/yoyo/recentlyViewed.js' ></script>
+    <script type='text/javascript' src='Scripts/yoyo/Common.js' ></script>
 </head>
 
 
@@ -143,42 +145,11 @@
                 </div>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-                <div class="clear div-front">
+                 <table class="clear div-front">
+                    <tr ID="PanelRV">
 
-                    <asp:ListView ID="RV_Products" runat="server" DataKeyNames="id">
-                        <EmptyDataTemplate>
-                            <table id="Table1" runat="server">
-                                <tr>
-                                    <td>No data was returned.
-                                    </td>
-                                </tr>
-                            </table>
-                        </EmptyDataTemplate>
-                        <EmptyItemTemplate>
-                            <td id="Td1" runat="server" />
-                        </EmptyItemTemplate>
-
-                        <ItemTemplate>
-                            <td>
-                                <div>
-                                    <a href='foto.aspx?productID=<%# Eval("id") %>'>
-                                        <image src='Images/Products/Icon/<%# Eval("Picture") %>' border="0">
-                                    </a>
-
-                                </div>
-                            </td>
-                        </ItemTemplate>
-                        <LayoutTemplate>
-                            <table>
-                                <tr>
-                                    <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-                                </tr>
-                            </table>
-                        </LayoutTemplate>
-                    </asp:ListView>
-
-
-                </div>
+                    </tr>
+                </table>
             </div>
             <div class="footer div-front">
             </div>
@@ -192,7 +163,7 @@
 
     </div>
     <script type='text/javascript' src='Scripts/yoyo/bag.js' ></script>
-
+    <script type='text/javascript'>showRV();</script>
         
     
 </body>

@@ -8,7 +8,8 @@
             height: 21px;
         }
     </style>
-    <script type='text/javascript'>
+      <script type='text/javascript' src='Scripts/yoyo/Common.js' ></script>
+     <script type='text/javascript'>
 
 
 
@@ -49,6 +50,7 @@
 
         </div>
     </div>
-
-
+    
+    <script type='text/javascript'>addToRV();</script>
+        
 </asp:Content>

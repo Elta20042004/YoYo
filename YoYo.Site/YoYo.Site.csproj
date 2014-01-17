@@ -73,6 +73,8 @@
     <Content Include="CheckOut.aspx" />
     <Content Include="Prod.aspx" />
     <Content Include="Scripts\yoyo\bag.js" />
+    <Content Include="Scripts\yoyo\Common.js" />
+    <Content Include="Scripts\yoyo\recentlyViewed.js" />
     <Content Include="Scripts\yoyo\localStorage.js" />
     <Content Include="Shop.aspx" />
     <Content Include="Registration.aspx" />

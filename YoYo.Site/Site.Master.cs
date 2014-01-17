@@ -55,23 +55,7 @@ namespace WebApplication4
                     productSelection[product] = productSelection[product] + 1;
                 }
             }
-
-            ShopEntities dbShop = new ShopEntities();
-            List<Product> selectedProducts = new List<Product>();
-
-            foreach (Product product in dbShop.Products)
-            {
-                if (productSelection.ContainsKey(product.id))
-                {
-                    Product temp = new Product();
-                    temp.id = product.id;
-                    temp.Picture = product.Picture;                  
-                    selectedProducts.Add(temp);
-                }
-            }
-
-            RV_Products.DataSource = selectedProducts;
-            RV_Products.DataBind();
+           
         }
 
         //public int Summa()
