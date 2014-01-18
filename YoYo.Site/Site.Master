@@ -136,7 +136,7 @@
 
                         <div class="div-front">
                             <asp:HyperLink ForeColor="Black" ID="Bag" runat="server" NavigateUrl="~/CheckOut.aspx">Bag</asp:HyperLink>
-                            <a href="JavaScript:show()" id="panelTitle">Bag</a>
+                            <a href="CheckOut.aspx" id="panelTitle">Bag</a>
                             <div id="panel">
                             </div>
                         </div>

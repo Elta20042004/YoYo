@@ -2,8 +2,31 @@
     CodeBehind="CheckOut.aspx.cs" Inherits="WebApplication4.CheckOut" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <style>
+        .outer {
+            border: 1px solid #ffffff;
+            background-color: #ffb08a;
+        }
+        .middle {
+            margin: 20px;
+            padding: 20px;
+            border: 10px solid #000000;
+            background-color: #ceb379;
+        }
+        .inner {
+            
+            width: 677px;           
+            border-bottom-style: solid;
+            text-align: left;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <script type='text/javascript' src='Scripts/yoyo/checkOut.js' ></script>
+    <table  id="checkoutTable" >
+                    
+    </table>
+    
     <asp:ListView ID="ListView_Products" runat="server" DataKeyNames="id" GroupItemCount="4">
         <EmptyDataTemplate>
             <table id="Table1" runat="server">
@@ -24,7 +47,7 @@
         <ItemTemplate>
             <%--<td id="Td2" runat="server">--%>
             <table width="900" runat="server">
-                
+
                 <tbody>
                     <tr>
                         <td>
@@ -83,4 +106,5 @@
             </table>
         </LayoutTemplate>
     </asp:ListView>
+    <script type='text/javascript'>showCheckoutBag();</script>
 </asp:Content>

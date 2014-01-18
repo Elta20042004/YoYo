@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -23,7 +25,7 @@ namespace WebApplication4
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Refrash();
+
         }
 
         protected void Remove_Command(object sender, CommandEventArgs e)
@@ -36,7 +38,7 @@ namespace WebApplication4
             }
         }
 
-        protected void Refrash()
+        protected void Refresh()
         {
             IList<int> selectedProductId = _productManager.GetProducts();           
             Dictionary<int, int> productSelection = new Dictionary<int, int>();
