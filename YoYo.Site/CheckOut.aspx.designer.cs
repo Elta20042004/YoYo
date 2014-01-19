@@ -11,14 +11,5 @@ namespace WebApplication4 {
     
     
     public partial class CheckOut {
-        
-        /// <summary>
-        /// ListView_Products control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView_Products;
     }
 }

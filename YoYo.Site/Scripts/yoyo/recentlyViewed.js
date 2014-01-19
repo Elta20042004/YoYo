@@ -37,5 +37,4 @@ function addToRV() {
         rV.splice(0, rV.length - 8);
     }
     setLocalStorageValue('RecentlyViewed', rV);
-    show();
 }

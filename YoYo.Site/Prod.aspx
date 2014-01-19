@@ -42,8 +42,16 @@
                 </div>
 
                 <div class="content_product_details div.product-buttons">
-                    <asp:LinkButton Text="Add to cart" ID="lnkAddToCart" runat="server" OnClick="lnkAddToCart_Click"></asp:LinkButton>
-                    <a href="JavaScript:addToCart()" id="addToCart">Add</a>
+                    <%--<asp:LinkButton Text="Add to cart" ID="lnkAddToCart" runat="server" OnClick="lnkAddToCart_Click"></asp:LinkButton>--%>                   
+                    <label>Quantity:</label>
+                    <select id="leaveCode" name="leaveCode">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <a href="JavaScript:addToCart()" id="addToCart" onclick="Quantity()">Add</a>
                 </div>
 
             </div>

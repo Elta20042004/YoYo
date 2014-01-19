@@ -37,53 +37,5 @@ namespace WebApplication4
                 Response.Redirect(Request.RawUrl);
             }
         }
-
-        protected void Refresh()
-        {
-            IList<int> selectedProductId = _productManager.GetProducts();           
-            Dictionary<int, int> productSelection = new Dictionary<int, int>();
-            foreach (int product in selectedProductId)
-            {
-                if (!productSelection.ContainsKey(product))
-                {
-                    productSelection.Add(product, 1);
-                }
-                else
-                {
-                    productSelection[product] = productSelection[product]+1;
-                }
-            }
-
-            ShopEntities dbShop = new ShopEntities();
-            List<CheckOutProduct> selectedProducts = new List<CheckOutProduct>();
-
-            foreach (Product product in dbShop.Products)
-            {
-                if (productSelection.ContainsKey(product.id))
-                {
-                    CheckOutProduct temp = new CheckOutProduct();
-                    temp.id = product.id;
-                    temp.Picture = product.Picture;
-                    temp.Name = product.Name;
-                    temp.Price = product.Price;
-                    temp.Quantity = productSelection[product.id];
-                    selectedProducts.Add(temp);
-                }
-            }
-
-            ListView_Products.DataSource = selectedProducts;
-            ListView_Products.DataBind();
-        }
-
-        public class CheckOutProduct : Product
-        {
-            public int Quantity
-            {
-                get;
-                set;
-            }
-        }
     }
-
-
 }

@@ -72,6 +72,7 @@
             a:hover {
                 text-decoration: underline;
             }
+           
     </style>
     <script type='text/javascript'>//<![CDATA[ 
         $(window).load(function () {
@@ -145,8 +146,8 @@
                 </div>
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-                 <table class="clear div-front">
-                    <tr ID="PanelRV">
+                 <table class="clear div-front"  style="margin-top: 200px">
+                    <tr ID="PanelRV" >
 
                     </tr>
                 </table>

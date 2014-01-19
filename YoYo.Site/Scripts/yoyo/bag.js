@@ -98,6 +98,7 @@ function show() {
         btn.addEventListener('click', function () {
             
             removeFromCart(this.id);
+            location.reload(showCheckoutBag);
         });
         // btn.setAttribute('onclick', 'table.removeChild(table)');
 
@@ -114,18 +115,30 @@ function show() {
     }
 }
 
-
+function findOrAddProduct(cart,productid) {
+    for (var i = 0; i < cart.length; i++) {
+        if (productid == cart[i].id) {
+            return cart[i];
+        }
+    }
+    var product = new Object();
+    product.id = productid;
+    product.image = document.getElementById("MainContent_imageBigPicture").getAttribute('src');
+    product.name = $("#MainContent_labelProdectName").text();
+    product.description = $("#MainContent_labelDescription").text();
+    product.description1 = $("#MainContent_labelDescription1").text();
+    
+    product.quantity = 0;
+    cart.push(product);
+    return product;
+}
 
 function addToCart() {
-    var product = new Object();
-    product.id = getParameterByName('productID');
-    product.image = document.getElementById('MainContent_imageBigPicture').getAttribute('src');
-    product.name = $('#MainContent_labelProdectName').text();
-    product.description = $('#MainContent_labelDescription').text();
-    product.description1 = $('#MainContent_labelDescription1').text();
-
+    var productid = getParameterByName('productID');
     var cart = getLocalStorageValue('Cart');
-    cart.push(product);
+    var count = parseInt($("#leaveCode")[0].value);
+    var product = findOrAddProduct(cart, productid);
+    product.quantity += count;
     setLocalStorageValue('Cart', cart);
     show();
 }
@@ -144,3 +157,4 @@ function removeFromCart(productId) {
     setLocalStorageValue('Cart', cartNew);
     show();
 }
+
