@@ -72,41 +72,120 @@ function collapsePanel() {
 
 
 
+//function show() {
+//    var cart = getLocalStorageValue('Cart');
+//    var table = document.getElementById('panel');
+//    table.innerHTML = '';
+//    table.originalHeight = Math.min(cart.length, 3) * 105;
+//    for (var i = 0, tr, td; i < cart.length; i++) {
+//        tr = document.createElement('tr');
+//        td = document.createElement('td');
+//        var image = document.createElement('img');
+//        image.src = cart[i].image;
+//        //image.src = "Images/Products/Icon/03.jpg";
+//        image.height = 100;
+//        image.width = 80;
+//        td.appendChild(image);
+//        td.width = 80;
+//        tr = document.createElement('tr');
+//        tr.appendChild(td);
+        
+//        td = document.createElement('td');
+//        td.appendChild(document.createTextNode(cart[i].name));
+        
+//        td.appendChild(document.createTextNode(cart[i].description));
+//        tr.appendChild(td);
+
+
+//        //?????????????????????????????????????????????????
+//        var btn = document.createElement('input');
+//        btn.id = cart[i].id;
+//        btn.type = 'button';
+//        btn.value = 'Delete';
+
+//        btn.addEventListener('click', function () {
+            
+//            removeFromCart(this.id);
+//            location.reload(showCheckoutBag);
+//        });
+//        // btn.setAttribute('onclick', 'table.removeChild(table)');
+
+
+//       // tr.appendChild(td);
+//        tr.appendChild(btn);
+//        table.appendChild(tr);
+        
+
+//    }
+
+//    if (cart.length > 0) {
+//        expandPanel();
+//    }
+//}
+
 function show() {
     var cart = getLocalStorageValue('Cart');
     var table = document.getElementById('panel');
     table.innerHTML = '';
     table.originalHeight = Math.min(cart.length, 3) * 105;
-    for (var i = 0, tr, td; i < cart.length; i++) {
-        tr = document.createElement('tr');
-        td = document.createElement('td');
+    for (var i = 0; i < cart.length; i++) {
+        var divParent = document.createElement('div');
+        divParent.className = "wrapper";
+//Pervaya kolonka
+        var divChild = document.createElement('div');
+        divChild.className = "image";
         var image = document.createElement('img');
+        image.className = "img";
         image.src = cart[i].image;
-        //image.src = "Images/Products/Icon/03.jpg";
-        image.height = 100;
-        image.width = 80;
-        td.appendChild(image);
-        td.appendChild(document.createTextNode(cart[i].name));
-        td.appendChild(document.createTextNode(cart[i].description));
+        
+        divChild.appendChild(image);
+        divParent.appendChild(divChild);        
+//Vtoraya kolonka
+        divChild = document.createElement('div');
+        divChild.className = "details";
+        divParent.appendChild(divChild);
 
-        //?????????????????????????????????????????????????
-        var btn = document.createElement('input');
+        var p = document.createElement('p');
+        p.className = "Cena";
+        divChild.appendChild(p);
+        p.appendChild(document.createTextNode(cart[i].price+"$"));
+
+        p = document.createElement('p');
+        p.className = "Name";
+        divChild.appendChild(p);
+        p.appendChild(document.createTextNode(cart[i].name));
+
+        p = document.createElement('p');
+        p.className = "Vid";
+        divChild.appendChild(p);
+        p.appendChild(document.createTextNode(cart[i].description));
+        
+        p = document.createElement('p');
+        p.className = "quantity";
+        divChild.appendChild(p);
+        p.appendChild(document.createTextNode("Qty: " + cart[i].quantity));
+//Tret'ya kolonka
+        divChild = document.createElement('div');
+        divChild.className = "Remove";
+        divParent.appendChild(divChild);
+
+        var btn = document.createElement('a');
         btn.id = cart[i].id;
-        btn.type = 'button';
-        btn.value = 'Delete';
-
+        btn.className = "rem";
+        btn.title = "Remove";
+        btn.innerHTML = 'x';
+       
+        
         btn.addEventListener('click', function () {
-            
+
             removeFromCart(this.id);
             location.reload(showCheckoutBag);
         });
-        // btn.setAttribute('onclick', 'table.removeChild(table)');
 
 
-        tr.appendChild(td);
-        tr.appendChild(btn);
-        table.appendChild(tr);
-        
+        divChild.appendChild(btn);
+        table.appendChild(divParent);
+
 
     }
 
@@ -125,8 +204,8 @@ function findOrAddProduct(cart,productid) {
     product.id = productid;
     product.image = document.getElementById("MainContent_imageBigPicture").getAttribute('src');
     product.name = $("#MainContent_labelProdectName").text();
-    product.description = $("#MainContent_labelDescription").text();
-    product.description1 = $("#MainContent_labelDescription1").text();
+    product.price = $("#MainContent_labelDescription").text();
+    product.description = $("#MainContent_labelDescription1").text();
     
     product.quantity = 0;
     cart.push(product);

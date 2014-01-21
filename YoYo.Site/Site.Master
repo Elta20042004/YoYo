@@ -43,14 +43,97 @@
             border: 1px solid rgba(0, 0, 0, 0.3);
             left: 60%;
             top: 10%;
-            margin-left: 20px;
+            margin-left: 0px;
             margin-top: 110px;
             outline: medium none;
             z-index: 10050;
             position: absolute;
-            border: 1px solid black;
+            border: 1px solid #c8c8c8;
             overflow: auto;
         }
+
+        	.wrapper{
+				background: #FFF;
+        	    border: 0px;
+        	    border-bottom : 1px solid #c8c8c8;
+				cursor: pointer;
+				height: 100px;
+				margin: 0;
+				overflow: hidden;
+				width: 238px;   
+			}
+			 
+			.image{
+				float:left;
+				height: 90px;
+				width: 60px;
+				margin: 5px ;
+				border: 1px solid #c8c8c8;
+
+			} 
+			
+			.img{
+				height: 90px;
+				width: 60px;
+				margin:0;
+			}
+			 
+			.details{
+				float:left;
+				height: 90px;
+				width: 140px;   
+				cursor: pointer;
+				border: 0px;
+				margin : 5px;
+				line-height: 1.5em;
+				font-size: 0.3em;
+				font-weight: bold;
+                text-align: left;
+			}
+			
+			.Cena{
+				font-size: 1.5em;
+				margin:0px;
+			}	
+
+			.Name{
+				font-family: tahoma;
+				font-size: 1em;
+				text-transform: none;
+				letter-spacing: 0.2px;
+			}
+
+			.remove{
+				float:left;
+				border: 0px;
+				margin : 5px;
+			}
+			
+			.rem{
+				background: #fff;
+				border: 1px solid #c8c8c8;
+				color: #c8c8c8;
+				cursor: pointer;
+				float: right;
+				font-family: Verdana;
+				font-size: 1.1em;
+				height: 8px;
+				width: 8px;
+				line-height: .1em;
+			    right: 0px;
+				position: relative;
+				text-align: center;
+			    text-decoration: none;
+			    top: 5px;
+				z-index: 30000;
+			}
+			
+				
+			.quantity{
+				line-height: 8em;
+			}	
+
+
     </style>
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -93,6 +176,7 @@
     <script type='text/javascript' src='Scripts/yoyo/localStorage.js' ></script>
     <script type='text/javascript' src='Scripts/yoyo/recentlyViewed.js' ></script>
     <script type='text/javascript' src='Scripts/yoyo/Common.js' ></script>
+    <script type='text/javascript' src='Scripts/yoyo/bag.js' ></script>
 </head>
 
 
