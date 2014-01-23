@@ -36,7 +36,7 @@
         <table style="border:0px; margin:0px" >
             <tr>
                 <td class="auto-style1" valign="top" style="width:70px">
-                    <div style="text-align:left; padding:0px;">
+                    <div style="text-align:left; padding:0;">
                         <asp:Menu ID="menuBar" SkipLinkText="" runat="server" Orientation="Vertical">
                         </asp:Menu>
                     </div>

@@ -103,15 +103,33 @@ first child of the left and right table columns */
     width: 700px;
     /*width: 960px;*/
     /*background-color: #fff;*/
-    margin: 20px auto 0px auto;
+    margin: 0px auto 0px auto;
     border: 0px solid ;
+}
+
+.Black {
+    margin: 0px; 
+    padding: 0px;
+    background: #242424;
+    height: 34px;
+    display: block;
+
+}
+
+.Underlined {
+    background: #242424;
+    font-family: Georgia,serif;
+    font-size: 1.4em;
+    line-height: 2.00625em;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .header
 {
     position: relative;
     margin: 0px;
-    padding: 0px;
+    padding: 20px 0px 0px 0px;
     background: #4b6c9e;
     width: 100%;
 }
@@ -164,6 +182,7 @@ div.hideSkiplink
 div.menu
 {
     padding: 0px;
+    margin: 0px;
 }
 
 div.menu ul
@@ -184,7 +203,7 @@ div.menu ul li a, div.menu ul li a:visited
     color: Black;
     display: block;
     line-height: 1.35em;
-    padding: 10px 20px 0px 0px;
+    padding: 0px 20px 0px 0px;
     text-decoration: none;    
     white-space: nowrap;
     /*margin: 10px 20px 0px 0px;*/
@@ -274,7 +293,7 @@ div.accountInfo
 
 .loginDisplay
 {
-    font-size: 1.1em;
+    font-size: 1.3em;
     display: block;
     text-align: right;
     padding: 10px;

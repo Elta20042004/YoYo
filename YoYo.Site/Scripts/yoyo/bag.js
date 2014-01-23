@@ -143,6 +143,7 @@ function show() {
 //Vtoraya kolonka
         divChild = document.createElement('div');
         divChild.className = "details";
+
         divParent.appendChild(divChild);
 
         var p = document.createElement('p');
@@ -169,12 +170,11 @@ function show() {
         divChild.className = "Remove";
         divParent.appendChild(divChild);
 
-        var btn = document.createElement('a');
+        var btn = document.createElement('span');
         btn.id = cart[i].id;
         btn.className = "rem";
         btn.title = "Remove";
-        btn.innerHTML = 'x';
-       
+
         
         btn.addEventListener('click', function () {
 
@@ -183,7 +183,10 @@ function show() {
         });
 
 
+        
         divChild.appendChild(btn);
+        
+        
         table.appendChild(divParent);
 
 
