@@ -34,7 +34,7 @@ namespace WebApplication4
                 imageBigPicture.ImageUrl ="Images/Products/Big/"+One.Picture;
                 labelProdectName.Text = One.Name;
                 labelDescription.Text = One.Price.ToString();
-                labelDescription1.Text = One.Descriprion;
+                labelDescription1.Text = One.Description;
                 HttpContext.Current.Session.Add("productID", One.id.ToString());
                 _rvManager.AddProduct(productId);
 

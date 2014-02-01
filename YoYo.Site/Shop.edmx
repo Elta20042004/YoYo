@@ -30,8 +30,7 @@
           <Property Name="Picture" Type="nvarchar" MaxLength="250" />
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="CategoryId" Type="int" />
-          <Property Name="KategoryID" Type="int" />
-          <Property Name="Descriprion" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar" MaxLength="2096" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -79,11 +78,10 @@
           <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="Price" />
           <Property Type="Int32" Name="Color" Nullable="false" />
+          <Property Type="String" Name="Picture" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="CategoryId" />
-          <Property Type="Int32" Name="KategoryID" />
-          <Property Type="String" Name="Descriprion" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Picture" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="2096" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -112,11 +110,10 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="ShopModel.Product">
               <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="Picture" ColumnName="Picture" />
-                <ScalarProperty Name="Descriprion" ColumnName="Descriprion" />
-                <ScalarProperty Name="KategoryID" ColumnName="KategoryID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
                 <ScalarProperty Name="Color" ColumnName="Color" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -146,7 +143,7 @@
       <Diagram Name="Shop">
         <EntityTypeShape EntityType="ShopModel.User" Width="1.5" PointX="2.625" PointY="0.875" Height="1.9802864583333331" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopModel.Category" Width="1.5" PointX="4.375" PointY="0.875" Height="1.9802864583333335" />
-        <EntityTypeShape EntityType="ShopModel.Product" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="ShopModel.Product" Width="1.5" PointX="6.4813785303763014" PointY="4.8380269579766439" />
       </Diagram>
     </Diagrams>
   </Designer>

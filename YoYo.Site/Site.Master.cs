@@ -23,14 +23,11 @@ namespace WebApplication4
         {
             
             ShopEntities dbShop = new ShopEntities();
+            menuMen.DataSource = dbShop.Categories.Where(t=>t.ParentID==1);
+            menuMen.DataBind();
 
-            NavigationMenu.Items[0].ChildItems.Clear();
-            NavigationMenu.Items[1].ChildItems.Clear();
-            foreach (var category in dbShop.Categories)
-            {
-                var menuItem = new MenuItem(category.Name, category.id.ToString(), "", category.NavigateUrl);
-                NavigationMenu.Items[1].ChildItems.Add(menuItem);
-            }
+            menuWomen.DataSource = dbShop.Categories.Where(t => t.ParentID == 2);
+            menuWomen.DataBind();    
 
             Bag.Text = "Bag " + "(" + _productManager.Summa().ToString() + "$" +")";
             Refresh();

@@ -35,7 +35,7 @@
                 <div>
                     <asp:Label runat="server" ID="labelDescription"></asp:Label>
                 </div>
-                <div class="labelDescription1">
+                <div class="labelDescription1"> 
 
                     <asp:Label runat="server" ID="labelDescription1"></asp:Label>
 

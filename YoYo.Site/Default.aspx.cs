@@ -10,12 +10,14 @@ namespace WebApplication4
 {
     public partial class _Default : Page
     {
+        private const string NavigateUrl = "~/Shop.aspx?Category={0}";
         protected void Page_Load(object sender, EventArgs e)
         {
             ShopEntities dbShop = new ShopEntities();
             foreach (var category in dbShop.Categories)
             {
-                var menuItem = new MenuItem(category.Name, category.id.ToString(), "", category.NavigateUrl);
+                string url = string.Format(NavigateUrl, category.id);
+                var menuItem = new MenuItem(category.Name, category.id.ToString(), "", url);
                 menuBar.Items.Add(menuItem);
             }
         }

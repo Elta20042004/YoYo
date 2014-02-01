@@ -404,6 +404,30 @@ namespace WebApplication4
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Picture
+        {
+            get
+            {
+                return _Picture;
+            }
+            set
+            {
+                OnPictureChanging(value);
+                ReportPropertyChanging("Picture");
+                _Picture = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Picture");
+                OnPictureChanged();
+            }
+        }
+        private global::System.String _Picture;
+        partial void OnPictureChanging(global::System.String value);
+        partial void OnPictureChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.Int32 id
@@ -457,72 +481,24 @@ namespace WebApplication4
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> KategoryID
+        public global::System.String Description
         {
             get
             {
-                return _KategoryID;
+                return _Description;
             }
             set
             {
-                OnKategoryIDChanging(value);
-                ReportPropertyChanging("KategoryID");
-                _KategoryID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("KategoryID");
-                OnKategoryIDChanged();
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
             }
         }
-        private Nullable<global::System.Int32> _KategoryID;
-        partial void OnKategoryIDChanging(Nullable<global::System.Int32> value);
-        partial void OnKategoryIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Descriprion
-        {
-            get
-            {
-                return _Descriprion;
-            }
-            set
-            {
-                OnDescriprionChanging(value);
-                ReportPropertyChanging("Descriprion");
-                _Descriprion = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Descriprion");
-                OnDescriprionChanged();
-            }
-        }
-        private global::System.String _Descriprion;
-        partial void OnDescriprionChanging(global::System.String value);
-        partial void OnDescriprionChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String Picture
-        {
-            get
-            {
-                return _Picture;
-            }
-            set
-            {
-                OnPictureChanging(value);
-                ReportPropertyChanging("Picture");
-                _Picture = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("Picture");
-                OnPictureChanged();
-            }
-        }
-        private global::System.String _Picture;
-        partial void OnPictureChanging(global::System.String value);
-        partial void OnPictureChanged();
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
 
         #endregion
 

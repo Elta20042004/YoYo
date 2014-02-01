@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYoUnitest", "YoYoUnitest\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYo.Paypal", "YoYo.Paypal\YoYo.Paypal.csproj", "{83F33245-A2CE-41E3-B468-A9AE82B6A58E}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "YoYo.Database", "YoYo.Database\YoYo.Database.sqlproj", "{6B2DA49B-5F63-4A33-AE60-959A6643713B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,12 @@ Global
 		{83F33245-A2CE-41E3-B468-A9AE82B6A58E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83F33245-A2CE-41E3-B468-A9AE82B6A58E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83F33245-A2CE-41E3-B468-A9AE82B6A58E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2DA49B-5F63-4A33-AE60-959A6643713B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B2DA49B-5F63-4A33-AE60-959A6643713B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B2DA49B-5F63-4A33-AE60-959A6643713B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6B2DA49B-5F63-4A33-AE60-959A6643713B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B2DA49B-5F63-4A33-AE60-959A6643713B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B2DA49B-5F63-4A33-AE60-959A6643713B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

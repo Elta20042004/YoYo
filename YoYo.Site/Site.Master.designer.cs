@@ -40,13 +40,22 @@ namespace WebApplication4 {
         protected global::System.Web.UI.WebControls.HyperLink LinkButton2;
         
         /// <summary>
-        /// NavigationMenu control.
+        /// menuWomen control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.ListView menuWomen;
+        
+        /// <summary>
+        /// menuMen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView menuMen;
         
         /// <summary>
         /// Bag control.

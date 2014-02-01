@@ -11,6 +11,57 @@
 </head>
 <head>
     <style type="text/css">
+        .floor {
+            float: left;
+            top: 0;
+            list-style-type: none;
+        }
+
+        .selected {
+            text-transform: uppercase;
+            padding: 0 20px 0 0;
+        }
+
+        .sub-floor-menu {
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            /*border: solid #000;
+				border-width: 5px 0 0;*/
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            z-index: 101;
+        }
+
+        .items {
+            list-style-type: none;
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+            .items li {
+                background-color: transparent;
+                text-decoration: none;
+                display: block;
+                float: none;
+            }
+
+                .items li :hover {
+                    background-color: black;
+                    color: white;
+                }
+
+        dt {
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <style type="text/css">
         .style1 {
             width: 677px;
         }
@@ -50,7 +101,6 @@
             position: absolute;
             border: 1px solid #c8c8c8;
             overflow-y: scroll;
-
         }
 
         .wrapper {
@@ -208,19 +258,85 @@
                     </div>
                     <div class="loginDisplay div-front" style="font-family: serif">
                         <%--<asp:Label ID="Label1" runat="server" Text="Label">Welcome to YoYo! </asp:Label>--%>
-                        <div style="padding: 0 150px 0 0;">Welcome to YoYo!</div>
+                        <div style="padding: 0;">Welcome to YoYo!</div>
                         <asp:HyperLink ForeColor="Black" ID="LinkButton1" runat="server" NavigateUrl="~/Registration.aspx">Join | </asp:HyperLink>
                         <asp:HyperLink ForeColor="Black" ID="LinkButton2" runat="server" NavigateUrl="~/SingIn.aspx">Sign In</asp:HyperLink>
                     </div>
                     <div class="clear hideSkiplink div-front">
-                        <asp:Menu CssClass="menu" ID="NavigationMenu" runat="server" EnableViewState="false"
+                        <%--          <asp:Menu CssClass="menu" ID="NavigationMenu" runat="server" EnableViewState="false"
                             IncludeStyleBlock="false" Orientation="Horizontal"
                             OnMenuItemClick="NavigationMenu_MenuItemClick">
                             <Items>
                                 <asp:MenuItem NavigateUrl="~/Default.aspx" Text="<a class = 'Underlined'>New in accessories</a>"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Default.aspx" Text="<a class = 'Underlined'>Accessories</a>"></asp:MenuItem>
                             </Items>
-                        </asp:Menu>
+                        </asp:Menu>--%>
+
+
+
+                        <li class="floor">
+                            <a class="selected" href="#">
+                                <span>Women</span>
+                            </a>
+                            <div class="sub-floor-menu">
+                                <dl class="section">
+                                    <dt>Shop by Product</dt>
+                                    <dd>
+                                        <asp:ListView ID="menuWomen" runat="server" DataKeyNames="id">
+
+                                            <ItemTemplate>
+                                                <li>
+                                                    <a href='Shop.aspx?Category=<%# Eval("id") %>'>
+                                                        <%# Eval("Name") %>
+
+                                                    </a>
+                                                </li>
+
+                                            </ItemTemplate>
+                                            <LayoutTemplate>
+                                                <ul class="items" id="itemPlaceholderContainer" runat="server">
+
+                                                    <li id="itemPlaceholder" runat="server"></li>
+                                                </ul>
+                                            </LayoutTemplate>
+                                        </asp:ListView>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li class="floor">
+                            <a class="selected" href="#">
+                                <span>Men</span>
+                            </a>
+                            <div class="sub-floor-menu">
+                                <dl class="section">
+                                    <dt>Shop by Product</dt>
+                                    <dd>
+
+                                        <asp:ListView ID="menuMen" runat="server" DataKeyNames="id">
+
+                                            <ItemTemplate>
+                                                <li>
+                                                    <a href='Shop.aspx?Category=<%# Eval("id") %>'>
+                                                        <%# Eval("Name") %>
+
+                                                    </a>
+                                                </li>
+
+                                            </ItemTemplate>
+                                            <LayoutTemplate>
+                                                <ul class="items" id="itemPlaceholderContainer" runat="server">
+
+                                                    <li id="itemPlaceholder" runat="server"></li>
+                                                </ul>
+                                            </LayoutTemplate>
+                                        </asp:ListView>
+
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+
 
                         <div class="div-front">
                             <asp:HyperLink ForeColor="Black" ID="Bag" runat="server" NavigateUrl="~/CheckOut.aspx">Bag</asp:HyperLink>
@@ -251,7 +367,37 @@
     </div>
     <script type='text/javascript' src='Scripts/yoyo/bag.js'></script>
     <script type='text/javascript'>showRV();</script>
+    <script type="text/JavaScript">
 
+
+        var Mass = document.getElementsByClassName('floor');
+
+        for (var i = 0; i < Mass.length; i++) {
+            Mass[i].onmouseover = onMouseIn;
+            Mass[i].onmouseout = onMouseOut;
+            var menu = Mass[i].getElementsByClassName('sub-floor-menu')[0];
+            menu.style.display = "none";
+        }
+
+
+        function onMouseIn(e) {
+            var parent = e.currentTarget;
+            var menu = parent.getElementsByClassName('sub-floor-menu')[0];
+            menu.style.display = "";
+            var menu = parent.getElementsByClassName('selected')[0];
+            menu.style.backgroundColor = 'black';
+            menu.style.color = 'white';
+        }
+
+        function onMouseOut(e) {
+            var parent = e.currentTarget;
+            var menu = parent.getElementsByClassName('sub-floor-menu')[0];
+            menu.style.display = "none";
+            var menu = parent.getElementsByClassName('selected')[0];
+            menu.style.backgroundColor = 'white';
+            menu.style.color = 'black';
+        }
+    </script>
 
 </body>
 </html>
