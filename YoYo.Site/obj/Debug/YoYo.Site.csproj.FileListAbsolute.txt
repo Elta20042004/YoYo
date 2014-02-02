@@ -3,8 +3,3 @@ J:\Lena_Projects\YoYo\YoYo.Site\bin\WebApplication4.pdb
 J:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\ResolveAssemblyReference.cache
 J:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\WebApplication4.dll
 J:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\WebApplication4.pdb
-F:\Lena_Projects\YoYo\YoYo.Site\bin\WebApplication4.dll
-F:\Lena_Projects\YoYo\YoYo.Site\bin\WebApplication4.pdb
-F:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\YoYo.Site.csprojResolveAssemblyReference.cache
-F:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\WebApplication4.dll
-F:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\WebApplication4.pdb

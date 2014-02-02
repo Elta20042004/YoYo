@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,9 +45,387 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\YoYo.PayPal.Soap\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\YoYo.PayPal.Soap\CoreComponentTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\eBLBaseComponents.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\EnhancedDataTypes.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\PayPalSvc.wsdl" />
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.AddressVerifyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.AddressVerifyResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BAUpdateResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BillAgreementUpdateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BillOutstandingAmountResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BillOutstandingAmountResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BillUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BillUserResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMButtonSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMButtonSearchResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMCreateButtonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMCreateButtonResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMGetButtonDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMGetButtonDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMGetInventoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMGetInventoryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMManageButtonStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMManageButtonStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMSetInventoryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMSetInventoryResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMUpdateButtonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.BMUpdateButtonResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CancelRecoupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CancelRecoupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CompleteRecoupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CompleteRecoupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CreateBillingAgreementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CreateBillingAgreementResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CreateMobilePaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CreateMobilePaymentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CreateRecurringPaymentsProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CreateRecurringPaymentsProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.CustomSecurityHeaderType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoAuthorizationResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoCancelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoCancelResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoCaptureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoCaptureResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoDirectPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoDirectPaymentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoExpressCheckoutPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoExpressCheckoutPaymentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoMobileCheckoutPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoMobileCheckoutPaymentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoNonReferencedCreditResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoNonReferencedCreditResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoReauthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoReauthorizationResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoReferenceTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoReferenceTransactionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoUATPAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoUATPAuthorizationResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoUATPExpressCheckoutPaymentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoUATPExpressCheckoutPaymentResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoVoidResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.DoVoidResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.EnterBoardingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.EnterBoardingResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ExecuteCheckoutOperationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ExecuteCheckoutOperationsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ExternalRememberMeOptOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ExternalRememberMeOptOutResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetAccessPermissionDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetAccessPermissionDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetAuthDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetAuthDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetBalanceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetBalanceResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetBillingAgreementCustomerDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetBillingAgreementCustomerDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetBoardingDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetBoardingDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetExpressCheckoutDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetExpressCheckoutDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetIncentiveEvaluationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetIncentiveEvaluationResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetMobileStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetMobileStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetPalDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetPalDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetRecurringPaymentsProfileDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetRecurringPaymentsProfileDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetTransactionDetailsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.GetTransactionDetailsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.InitiateRecoupResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.InitiateRecoupResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ManagePendingTransactionStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ManagePendingTransactionStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ManageRecurringPaymentsProfileStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ManageRecurringPaymentsProfileStatusResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.MassPayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.MassPayResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.RefundTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.RefundTransactionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ReverseTransactionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.ReverseTransactionResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetAccessPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetAccessPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetAuthFlowParamResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetAuthFlowParamResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetCustomerBillingAgreementResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetCustomerBillingAgreementResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetExpressCheckoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetExpressCheckoutResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetMobileCheckoutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.SetMobileCheckoutResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.TransactionSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.TransactionSearchResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.UpdateAccessPermissionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.UpdateAccessPermissionsResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.UpdateAuthorizationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.UpdateAuthorizationResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.UpdateRecurringPaymentsProfileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\YoYo.PayPal.Soap\YoYo.Paypal.YoYo.PayPal.Soap.UpdateRecurringPaymentsProfileResponseType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\YoYo.PayPal.Soap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\YoYo.PayPal.Soap\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\YoYo.PayPal.Soap\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\YoYo.PayPal.Soap\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
