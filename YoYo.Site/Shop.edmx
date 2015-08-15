@@ -143,7 +143,7 @@
       <Diagram Name="Shop">
         <EntityTypeShape EntityType="ShopModel.User" Width="1.5" PointX="2.625" PointY="0.875" Height="1.9802864583333331" IsExpanded="true" />
         <EntityTypeShape EntityType="ShopModel.Category" Width="1.5" PointX="4.375" PointY="0.875" Height="1.9802864583333335" />
-        <EntityTypeShape EntityType="ShopModel.Product" Width="1.5" PointX="6.4813785303763014" PointY="4.8380269579766439" />
+        <EntityTypeShape EntityType="ShopModel.Product" Width="1.5" PointX="6.25" PointY="0.875" />
       </Diagram>
     </Diagrams>
   </Designer>
