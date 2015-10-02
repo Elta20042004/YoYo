@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYo.Site", "YoYo.Site\YoYo.Site.csproj", "{74B41C07-FCB8-4EF5-8D28-7CE715787D6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYoUnitest", "YoYoUnitest\YoYoUnitest.csproj", "{E69DAA63-93CE-4846-8B94-AECE58D6E8B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYo.Test", "YoYoUnitest\YoYo.Test.csproj", "{E69DAA63-93CE-4846-8B94-AECE58D6E8B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoYo.Paypal", "YoYo.Paypal\YoYo.Paypal.csproj", "{83F33245-A2CE-41E3-B468-A9AE82B6A58E}"
 EndProject
