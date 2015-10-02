@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace WebApplication4.Logic
+namespace YoYo.Site.Logic
 {
     public interface IProductRepository
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication4
+namespace YoYo.Site
 {
     public partial class Registration : System.Web.UI.Page
     {

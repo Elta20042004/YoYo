@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Registration.aspx.cs" Inherits="WebApplication4.Registration" %>
+    CodeBehind="Registration.aspx.cs" Inherits="YoYo.Site.Registration" %>
 <asp:Content id="content1" ContentPlaceHolderID="headcontent" runat="server">
 </asp:Content>
 <asp:Content id="content2" ContentPlaceHolderID="maincontent" runat="server">

@@ -17,7 +17,7 @@ using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
-namespace WebApplication4
+namespace YoYo.Site
 {
     #region Contexts
     

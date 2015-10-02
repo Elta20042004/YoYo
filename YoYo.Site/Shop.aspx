@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="Shop.aspx.cs" Inherits="WebApplication4.Shop" %>
+    CodeBehind="Shop.aspx.cs" Inherits="YoYo.Site.Shop" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication4.Account
+namespace YoYo.Site.Account
 {
     public partial class Login : System.Web.UI.Page
     {

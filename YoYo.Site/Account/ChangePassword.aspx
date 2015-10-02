@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Change Password" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="ChangePassword.aspx.cs" Inherits="WebApplication4.Account.ChangePassword" %>
+    CodeBehind="ChangePassword.aspx.cs" Inherits="YoYo.Site.Account.ChangePassword" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>

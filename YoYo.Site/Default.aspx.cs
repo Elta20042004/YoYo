@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Objects;
 
-namespace WebApplication4
+namespace YoYo.Site
 {
     public partial class _Default : Page
     {

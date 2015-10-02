@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication4 {
+namespace YoYo.Site {
     
     
     public partial class Prod {

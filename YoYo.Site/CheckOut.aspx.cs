@@ -6,9 +6,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplication4.Logic;
+using YoYo.Site.Logic;
 
-namespace WebApplication4
+namespace YoYo.Site
 {
 
 

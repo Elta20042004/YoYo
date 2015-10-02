@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"
-    CodeBehind="CheckOut.aspx.cs" Inherits="WebApplication4.CheckOut" %>
+    CodeBehind="CheckOut.aspx.cs" Inherits="YoYo.Site.CheckOut" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style>

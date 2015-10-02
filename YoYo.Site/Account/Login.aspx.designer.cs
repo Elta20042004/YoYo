@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication4.Account
+namespace YoYo.Site.Account
 {
 
 

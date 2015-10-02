@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Xml.Serialization;
 
-namespace WebApplication4.Logic
+namespace YoYo.Site.Logic
 {
     public class FileRepository : IProductRepository
     {

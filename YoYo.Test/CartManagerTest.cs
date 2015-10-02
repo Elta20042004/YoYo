@@ -1,12 +1,12 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using WebApplication4.Logic;
+using YoYo.Site.Logic;
 
 namespace YoYoUnitest
 {
     [TestClass]
-    public class UnitTest1
+    public class CartManagerTest
     {
         [TestMethod]
         public void Serialize()

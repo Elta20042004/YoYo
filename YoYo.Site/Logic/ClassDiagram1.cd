@@ -1,50 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Class Name="WebApplication4.Logic.CartManager">
+  <Class Name="YoYo.Site.Logic.CartManager">
     <Position X="5.25" Y="4.75" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAIQAAAAAAAAAEAQAAAAAAAAAA=</HashCode>
       <FileName>Logic\CartManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApplication4.Logic.CookieData">
+  <Class Name="YoYo.Site.Logic.CookieData">
     <Position X="3.5" Y="0.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Logic\CookieData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApplication4.Logic.CookieRepository">
-    <Position X="6.5" Y="2.5" Width="1.5" />
+  <Class Name="YoYo.Site.Logic.CookieRepository">
+    <Position X="5" Y="2.75" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Logic\CookieRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WebApplication4.Logic.FileRepository">
-    <Position X="8.75" Y="2.5" Width="1.5" />
+  <Class Name="YoYo.Site.Logic.FileRepository">
+    <Position X="8.75" Y="2.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAABAAAA=</HashCode>
       <FileName>Logic\FileRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="WebApplication4.Logic.RecentlyViewedManager">
+  <Class Name="YoYo.Site.Logic.RecentlyViewedManager">
     <Position X="9.25" Y="5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAIQAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Logic\RecentlyViewedManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="WebApplication4.Logic.XmlSerializable&lt;T&gt;">
-    <Position X="1.75" Y="3.75" Width="2.25" />
+  <Class Name="YoYo.Site.Logic.XmlSerializable&lt;T&gt;">
+    <Position X="2.25" Y="3.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Logic\XmlSerializable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="WebApplication4.Logic.IProductRepository">
+  <Interface Name="YoYo.Site.Logic.IProductRepository">
     <Position X="6.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAA=</HashCode>

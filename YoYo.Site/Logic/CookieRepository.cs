@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace WebApplication4.Logic
+namespace YoYo.Site.Logic
 {
     public class CookieRepository : IProductRepository
     {
