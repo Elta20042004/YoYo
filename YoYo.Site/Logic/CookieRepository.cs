@@ -38,9 +38,9 @@ namespace YoYo.Site.Logic
         public void PutCookieData(CookieData products)
         {
             byte[] value;
-            using (var zipped = new MemoryStream())
+            using (var compressed = new MemoryStream())
             {
-                using (GZipStream tinyStream = new GZipStream(zipped, CompressionMode.Compress))
+                using (GZipStream tinyStream = new GZipStream(compressed, CompressionMode.Compress))
                 {
                     using (MemoryStream ms = new MemoryStream())
                     {
@@ -49,12 +49,11 @@ namespace YoYo.Site.Logic
                         ms.CopyTo(tinyStream);
                     }
                 }
-                value = zipped.ToArray();
+                value = compressed.ToArray();
             }
             
             var session = HttpContext.Current.Session;
             session["data"] = value;
         }
     }
-
 }

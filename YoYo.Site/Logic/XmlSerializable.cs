@@ -9,17 +9,17 @@ namespace YoYo.Site.Logic
 {
     public class XmlSerializable <T>
     {
-        static XmlSerializer x = new XmlSerializer(typeof(T));
+        static private readonly XmlSerializer Serializer = new XmlSerializer(typeof(T));
 
         public static T Deserialize(Stream stream)
         {
-            T result = (T)x.Deserialize(stream);
+            T result = (T)Serializer.Deserialize(stream);
             return result;
         }
 
         public void Serialize(Stream stream)
         {
-            x.Serialize(stream, this);
+            Serializer.Serialize(stream, this);
         }
     }
 }

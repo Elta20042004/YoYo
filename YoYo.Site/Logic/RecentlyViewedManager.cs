@@ -7,7 +7,7 @@ namespace YoYo.Site.Logic
 {
     public class RecentlyViewedManager
     {
-        IProductRepository _productRepository;
+        private readonly IProductRepository _productRepository;
 
         public RecentlyViewedManager(IProductRepository productRepository)
         {
@@ -38,7 +38,5 @@ namespace YoYo.Site.Logic
             var result = _productRepository.GetCookieData();
             return result.RecentlyViewed;
         }
-
-
     }
 }

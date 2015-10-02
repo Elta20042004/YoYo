@@ -28,7 +28,6 @@ namespace YoYo.Site.Logic
 
         public void PutCookieData(CookieData products)
         {
-            CookieData result;
             using (var stream = File.Create(FileName))
             {
                 products.Serialize(stream);
