@@ -10,22 +10,17 @@ using YoYo.Site.Logic;
 
 namespace YoYo.Site
 {
-
-
     public partial class CheckOut : System.Web.UI.Page
     {
-        CartManager _productManager;
+        private readonly CartManager _productManager;
 
         public CheckOut()
         {
             _productManager = new CartManager(new CookieUserDataRepository());
         }
-        public static Product New;
-        //public static List<Product> CheckOutProducts = new List<Product>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void Remove_Command(object sender, CommandEventArgs e)
