@@ -7,26 +7,27 @@ using System.Xml.Serialization;
 
 namespace YoYo.Site.Logic
 {
-    public class FileRepository : IProductRepository
+    public class FileUserDataRepository : IUserDataRepository
     {
         const string FileName =@"D:\ser.xml";
 
-        public CookieData GetCookieData()
+        public UserData GetUserData()
         {
             if (!File.Exists(FileName))
             {
-                return new CookieData();
+                return new UserData();
             }
 
-            CookieData result;
+            UserData result;
             using (var str = File.OpenRead(FileName))
             {
-                result = CookieData.Deserialize(str);
+                result = UserData.Deserialize(str);
             }
+
             return result;
         }
 
-        public void PutCookieData(CookieData products)
+        public void SaveUserData(UserData products)
         {
             using (var stream = File.Create(FileName))
             {

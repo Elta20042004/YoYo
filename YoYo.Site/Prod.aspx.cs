@@ -14,7 +14,7 @@ namespace YoYo.Site
         RecentlyViewedManager _rvManager;
         public Prod()
         {
-            var repository = new CookieRepository();
+            var repository = new CookieUserDataRepository();
             _productManager = new CartManager(repository);
             _rvManager = new RecentlyViewedManager(repository);
         }

@@ -1,41 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace YoYo.Site.Logic
 {
     public class RecentlyViewedManager
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IUserDataRepository _productRepository;
 
-        public RecentlyViewedManager(IProductRepository productRepository)
+        public RecentlyViewedManager(IUserDataRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
         public void AddProduct(int productId)
         {
-            var products = _productRepository.GetCookieData();
+            var products = _productRepository.GetUserData();
             if (products.RecentlyViewed == null)
             {
                 products.RecentlyViewed = new List<int>();
             }
-            products.RecentlyViewed.Add(productId);
-            _productRepository.PutCookieData(products);
 
+            products.RecentlyViewed.Add(productId);
+            _productRepository.SaveUserData(products);
         }
 
         public void RemoveProduct(int productId)
         {
-            var products = _productRepository.GetCookieData();
+            var products = _productRepository.GetUserData();
             products.RecentlyViewed.Remove(productId);
-            _productRepository.PutCookieData(products);
+            _productRepository.SaveUserData(products);
         }
 
         public List<int> GetProducts()
         {
-            var result = _productRepository.GetCookieData();
+            var result = _productRepository.GetUserData();
             return result.RecentlyViewed;
         }
     }

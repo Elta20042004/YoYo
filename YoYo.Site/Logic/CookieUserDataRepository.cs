@@ -8,50 +8,51 @@ using System.Web;
 
 namespace YoYo.Site.Logic
 {
-    public class CookieRepository : IProductRepository
+    public class CookieUserDataRepository : IUserDataRepository
     {
-        public CookieData GetCookieData()
+        public UserData GetUserData()
         {
-            var  session = HttpContext.Current.Session;
+            var session = HttpContext.Current.Session;
             var data = session["data"] as byte[];
-            if (data==null || data.Length==0)
+            if (data == null || data.Length == 0)
             {
-                return new CookieData();
+                return new UserData();
             }
 
             using (var repo = new MemoryStream(data))
             {
                 repo.Seek(0, SeekOrigin.Begin);
-                using (GZipStream bigStream = new GZipStream(repo, CompressionMode.Decompress))
+                using (var gzipDecompress = new GZipStream(repo, CompressionMode.Decompress))
                 {
-                    using (var unZipped = new MemoryStream())
+                    using (var decompressed = new MemoryStream())
                     {
-                        bigStream.CopyTo(unZipped);
-                        unZipped.Seek(0, SeekOrigin.Begin);
-                        CookieData cdata = CookieData.Deserialize(unZipped);
-                        return cdata;
+                        gzipDecompress.CopyTo(decompressed);
+                        decompressed.Seek(0, SeekOrigin.Begin);
+                        var cookieData = UserData.Deserialize(decompressed);
+                        return cookieData;
                     }
                 }
             }
         }
 
-        public void PutCookieData(CookieData products)
+        public void SaveUserData(UserData products)
         {
             byte[] value;
             using (var compressed = new MemoryStream())
             {
-                using (GZipStream tinyStream = new GZipStream(compressed, CompressionMode.Compress))
+                using (var gzipCompress = new GZipStream(compressed, CompressionMode.Compress))
                 {
-                    using (MemoryStream ms = new MemoryStream())
+                    using (var ms = new MemoryStream())
                     {
                         products.Serialize(ms);
                         ms.Seek(0, SeekOrigin.Begin);
-                        ms.CopyTo(tinyStream);
+                        ms.CopyTo(gzipCompress);
                     }
                 }
+
                 value = compressed.ToArray();
             }
-            
+
             var session = HttpContext.Current.Session;
             session["data"] = value;
         }

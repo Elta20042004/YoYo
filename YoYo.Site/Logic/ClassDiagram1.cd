@@ -7,25 +7,25 @@
       <FileName>Logic\CartManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="YoYo.Site.Logic.CookieData">
+  <Class Name="YoYo.Site.Logic.UserData">
     <Position X="3.5" Y="0.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Logic\CookieData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="YoYo.Site.Logic.CookieRepository">
+  <Class Name="YoYo.Site.Logic.CookieUserDataRepository">
     <Position X="5" Y="2.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Logic\CookieRepository.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\CookieUserDataRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="YoYo.Site.Logic.FileRepository">
+  <Class Name="YoYo.Site.Logic.FileUserDataRepository">
     <Position X="8.75" Y="2.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAAABAAAA=</HashCode>
       <FileName>Logic\FileRepository.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -40,15 +40,15 @@
   <Class Name="YoYo.Site.Logic.XmlSerializable&lt;T&gt;">
     <Position X="2.25" Y="3.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Logic\XmlSerializable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="YoYo.Site.Logic.IProductRepository">
+  <Interface Name="YoYo.Site.Logic.IUserDataRepository">
     <Position X="6.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAAAA=</HashCode>
-      <FileName>Logic\IProductRepository.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\IUserDataRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

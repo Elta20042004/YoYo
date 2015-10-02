@@ -7,30 +7,30 @@ namespace YoYo.Site.Logic
 {
     public class CartManager
     {
-        IProductRepository _productRepository;
+        IUserDataRepository _productRepository;
 
-        public CartManager(IProductRepository productRepository)
+        public CartManager(IUserDataRepository productRepository)
         {
             _productRepository = productRepository;
         }
 
         public void AddProduct(int productId)
         {
-            var products = _productRepository.GetCookieData();
+            var products = _productRepository.GetUserData();
             products.Cart.Add(productId);
-            _productRepository.PutCookieData(products);
+            _productRepository.SaveUserData(products);
         }
 
         public void RemoveProduct(int productId)
         {
-            var products = _productRepository.GetCookieData();
+            var products = _productRepository.GetUserData();
             products.Cart.Remove(productId);
-            _productRepository.PutCookieData(products);
+            _productRepository.SaveUserData(products);
         }
 
         public List<int> GetProducts()
         {
-            var result = _productRepository.GetCookieData();
+            var result = _productRepository.GetUserData();
             return result.Cart;
         }
 

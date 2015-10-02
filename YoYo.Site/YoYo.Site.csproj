@@ -154,6 +154,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logic\IUserDataRepository.cs" />
     <Compile Include="Prod.aspx.cs">
       <DependentUpon>Prod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -165,10 +166,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\CookieData.cs" />
-    <Compile Include="Logic\CookieRepository.cs" />
+    <Compile Include="Logic\CookieUserDataRepository.cs" />
     <Compile Include="Logic\RecentlyViewedManager.cs" />
     <Compile Include="Logic\FileRepository.cs" />
-    <Compile Include="Logic\IProductRepository.cs" />
     <Compile Include="Logic\CartManager.cs" />
     <Compile Include="Logic\XmlSerializable.cs" />
     <Compile Include="Shop.aspx.cs">

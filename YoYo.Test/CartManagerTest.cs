@@ -11,7 +11,7 @@ namespace YoYoUnitest
         [TestMethod]
         public void Serialize()
         {
-            CartManager manager = new CartManager(new CookieRepository());
+            CartManager manager = new CartManager(new CookieUserDataRepository());
             manager.AddProduct(1);
             manager.AddProduct(2);
             List<int> current = manager.GetProducts();

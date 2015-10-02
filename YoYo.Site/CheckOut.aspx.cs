@@ -18,7 +18,7 @@ namespace YoYo.Site
 
         public CheckOut()
         {
-            _productManager = new CartManager(new CookieRepository());
+            _productManager = new CartManager(new CookieUserDataRepository());
         }
         public static Product New;
         //public static List<Product> CheckOutProducts = new List<Product>();
