@@ -6,8 +6,8 @@
     <ProjectGuid>{E69DAA63-93CE-4846-8B94-AECE58D6E8B2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YoYoUnitest</RootNamespace>
-    <AssemblyName>YoYoUnitest</AssemblyName>
+    <RootNamespace>YoYo.Test</RootNamespace>
+    <AssemblyName>YoYo.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -37,13 +37,6 @@
       <FileName>Logic\RecentlyViewedManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="YoYo.Site.Logic.XmlSerializable&lt;T&gt;">
-    <Position X="2.25" Y="3.75" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Logic\XmlSerializable.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Interface Name="YoYo.Site.Logic.IUserDataRepository">
     <Position X="6.5" Y="0.5" Width="2.75" />
     <TypeIdentifier>

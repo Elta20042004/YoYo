@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Xml.Serialization;
 
-namespace YoYo.Site.Logic
+namespace YoYo.Common
 {
     public class XmlSerializable <T>
     {

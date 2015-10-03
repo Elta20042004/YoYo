@@ -13,7 +13,7 @@ namespace YoYo.Site
         private const string NavigateUrl = "~/Shop.aspx?Category={0}";
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShopEntities dbShop = new ShopEntities();
+            var dbShop = new ShopEntities();
             foreach (var category in dbShop.Categories)
             {
                 string url = string.Format(NavigateUrl, category.id);
@@ -24,7 +24,6 @@ namespace YoYo.Site
 
         protected void ListView_Products_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

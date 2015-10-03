@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using YoYo.Site.Logic;
 
-namespace YoYoUnitest
+namespace YoYo.Test
 {
     [TestClass]
     public class CartManagerTest

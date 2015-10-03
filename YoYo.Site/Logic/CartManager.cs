@@ -7,7 +7,7 @@ namespace YoYo.Site.Logic
 {
     public class CartManager
     {
-        IUserDataRepository _productRepository;
+        private readonly IUserDataRepository _productRepository;
 
         public CartManager(IUserDataRepository productRepository)
         {

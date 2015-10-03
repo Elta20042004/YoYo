@@ -172,7 +172,7 @@ namespace YoYo.Site
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -189,7 +189,7 @@ namespace YoYo.Site
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -213,7 +213,7 @@ namespace YoYo.Site
             {
                 OnDiscriptionChanging(value);
                 ReportPropertyChanging("Discription");
-                _Discription = StructuralObject.SetValidValue(value, true);
+                _Discription = StructuralObject.SetValidValue(value, true, "Discription");
                 ReportPropertyChanged("Discription");
                 OnDiscriptionChanged();
             }
@@ -239,7 +239,7 @@ namespace YoYo.Site
                 {
                     OnidChanging(value);
                     ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
+                    _id = StructuralObject.SetValidValue(value, "id");
                     ReportPropertyChanged("id");
                     OnidChanged();
                 }
@@ -264,7 +264,7 @@ namespace YoYo.Site
             {
                 OnParentIDChanging(value);
                 ReportPropertyChanging("ParentID");
-                _ParentID = StructuralObject.SetValidValue(value);
+                _ParentID = StructuralObject.SetValidValue(value, "ParentID");
                 ReportPropertyChanged("ParentID");
                 OnParentIDChanged();
             }
@@ -288,7 +288,7 @@ namespace YoYo.Site
             {
                 OnNavigateUrlChanging(value);
                 ReportPropertyChanging("NavigateUrl");
-                _NavigateUrl = StructuralObject.SetValidValue(value, true);
+                _NavigateUrl = StructuralObject.SetValidValue(value, true, "NavigateUrl");
                 ReportPropertyChanged("NavigateUrl");
                 OnNavigateUrlChanged();
             }
@@ -299,7 +299,6 @@ namespace YoYo.Site
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -327,7 +326,7 @@ namespace YoYo.Site
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -344,7 +343,7 @@ namespace YoYo.Site
             {
                 OnNameChanging(value);
                 ReportPropertyChanging("Name");
-                _Name = StructuralObject.SetValidValue(value, true);
+                _Name = StructuralObject.SetValidValue(value, true, "Name");
                 ReportPropertyChanged("Name");
                 OnNameChanged();
             }
@@ -368,7 +367,7 @@ namespace YoYo.Site
             {
                 OnPriceChanging(value);
                 ReportPropertyChanging("Price");
-                _Price = StructuralObject.SetValidValue(value);
+                _Price = StructuralObject.SetValidValue(value, "Price");
                 ReportPropertyChanged("Price");
                 OnPriceChanged();
             }
@@ -392,7 +391,7 @@ namespace YoYo.Site
             {
                 OnColorChanging(value);
                 ReportPropertyChanging("Color");
-                _Color = StructuralObject.SetValidValue(value);
+                _Color = StructuralObject.SetValidValue(value, "Color");
                 ReportPropertyChanged("Color");
                 OnColorChanged();
             }
@@ -416,7 +415,7 @@ namespace YoYo.Site
             {
                 OnPictureChanging(value);
                 ReportPropertyChanging("Picture");
-                _Picture = StructuralObject.SetValidValue(value, true);
+                _Picture = StructuralObject.SetValidValue(value, true, "Picture");
                 ReportPropertyChanged("Picture");
                 OnPictureChanged();
             }
@@ -442,7 +441,7 @@ namespace YoYo.Site
                 {
                     OnidChanging(value);
                     ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
+                    _id = StructuralObject.SetValidValue(value, "id");
                     ReportPropertyChanged("id");
                     OnidChanged();
                 }
@@ -467,7 +466,7 @@ namespace YoYo.Site
             {
                 OnCategoryIdChanging(value);
                 ReportPropertyChanging("CategoryId");
-                _CategoryId = StructuralObject.SetValidValue(value);
+                _CategoryId = StructuralObject.SetValidValue(value, "CategoryId");
                 ReportPropertyChanged("CategoryId");
                 OnCategoryIdChanged();
             }
@@ -491,7 +490,7 @@ namespace YoYo.Site
             {
                 OnDescriptionChanging(value);
                 ReportPropertyChanging("Description");
-                _Description = StructuralObject.SetValidValue(value, true);
+                _Description = StructuralObject.SetValidValue(value, true, "Description");
                 ReportPropertyChanged("Description");
                 OnDescriptionChanged();
             }
@@ -502,7 +501,6 @@ namespace YoYo.Site
 
         #endregion
 
-    
     }
     
     /// <summary>
@@ -528,7 +526,7 @@ namespace YoYo.Site
 
         #endregion
 
-        #region Primitive Properties
+        #region Simple Properties
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -547,7 +545,7 @@ namespace YoYo.Site
                 {
                     OnIDChanging(value);
                     ReportPropertyChanging("ID");
-                    _ID = StructuralObject.SetValidValue(value);
+                    _ID = StructuralObject.SetValidValue(value, "ID");
                     ReportPropertyChanged("ID");
                     OnIDChanged();
                 }
@@ -572,7 +570,7 @@ namespace YoYo.Site
             {
                 OnFirst_NameChanging(value);
                 ReportPropertyChanging("First_Name");
-                _First_Name = StructuralObject.SetValidValue(value, true);
+                _First_Name = StructuralObject.SetValidValue(value, true, "First_Name");
                 ReportPropertyChanged("First_Name");
                 OnFirst_NameChanged();
             }
@@ -596,7 +594,7 @@ namespace YoYo.Site
             {
                 OnLast_NameChanging(value);
                 ReportPropertyChanging("Last_Name");
-                _Last_Name = StructuralObject.SetValidValue(value, true);
+                _Last_Name = StructuralObject.SetValidValue(value, true, "Last_Name");
                 ReportPropertyChanged("Last_Name");
                 OnLast_NameChanged();
             }
@@ -620,7 +618,7 @@ namespace YoYo.Site
             {
                 OnEmailChanging(value);
                 ReportPropertyChanging("Email");
-                _Email = StructuralObject.SetValidValue(value, true);
+                _Email = StructuralObject.SetValidValue(value, true, "Email");
                 ReportPropertyChanged("Email");
                 OnEmailChanged();
             }
@@ -644,7 +642,7 @@ namespace YoYo.Site
             {
                 OnPasswordChanging(value);
                 ReportPropertyChanging("Password");
-                _Password = StructuralObject.SetValidValue(value, true);
+                _Password = StructuralObject.SetValidValue(value, true, "Password");
                 ReportPropertyChanged("Password");
                 OnPasswordChanged();
             }
@@ -655,10 +653,8 @@ namespace YoYo.Site
 
         #endregion
 
-    
     }
 
     #endregion
 
-    
 }

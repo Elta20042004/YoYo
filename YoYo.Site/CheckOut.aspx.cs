@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using YoYo.Site.Logic;
 
 namespace YoYo.Site
 {
-    public partial class CheckOut : System.Web.UI.Page
+    public partial class CheckOut : Page
     {
         private readonly CartManager _productManager;
 

@@ -10,12 +10,12 @@ namespace YoYo.Site
 {
     public partial class Prod : System.Web.UI.Page
     {
-        CartManager _productManager;
-        RecentlyViewedManager _rvManager;
+        private readonly CartManager _cartManager;
+        private readonly RecentlyViewedManager _rvManager;
         public Prod()
         {
             var repository = new CookieUserDataRepository();
-            _productManager = new CartManager(repository);
+            _cartManager = new CartManager(repository);
             _rvManager = new RecentlyViewedManager(repository);
         }
 
@@ -30,14 +30,13 @@ namespace YoYo.Site
                 int productId = int.Parse(HttpContext.Current.Request.QueryString["productID"]);
                 products = products.Where(t => t.id == productId);
 
-                Product One = products.First();
-                imageBigPicture.ImageUrl ="Images/Products/Big/"+One.Picture;
-                labelProdectName.Text = One.Name;
-                labelDescription.Text = One.Price.ToString();
-                labelDescription1.Text = One.Description;
-                HttpContext.Current.Session.Add("productID", One.id.ToString());
+                Product first = products.First();
+                imageBigPicture.ImageUrl ="Images/Products/Big/"+first.Picture;
+                labelProdectName.Text = first.Name;
+                labelDescription.Text = first.Price.ToString();
+                labelDescription1.Text = first.Description;
+                HttpContext.Current.Session.Add("productID", first.id.ToString());
                 _rvManager.AddProduct(productId);
-
             }                    
         }
 
@@ -45,7 +44,7 @@ namespace YoYo.Site
         {
             string param = HttpContext.Current.Session.Contents["productID"].ToString();
             int productId = int.Parse(param);
-            _productManager.AddProduct(productId);
+            _cartManager.AddProduct(productId);
             Response.Redirect(Request.RawUrl);
         }
     }
