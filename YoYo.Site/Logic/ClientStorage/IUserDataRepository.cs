@@ -1,4 +1,4 @@
-﻿namespace YoYo.Site.Logic
+﻿namespace YoYo.Site.Logic.ClientStorage
 {
     public interface IUserDataRepository
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YoYo.Site.Logic.ServerStorage;
 
 namespace YoYo.Site
 {
@@ -16,23 +17,16 @@ namespace YoYo.Site
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            ShopEntities db = new ShopEntities();
-
-            IEnumerable<User> users = db.Users ;
-
-            foreach (var Pipla in db.Users)
+            var users = CachedUsers.Instance;
+            var user = users.GetUser(txtLogin.Text);
+            if (user !=null && user.Password == TextParol.Text)
             {
-                if ((Pipla.Email == txtLogin.Text) && (Pipla.Password == TextParol.Text))
-                {
-                    Response.Write("<script>window.open('Default.aspx')</script>");
-                }
-                else
-                {
-                    Label.Visible = true;
-                }
+                Response.Write("<script>window.open('Default.aspx')</script>");
             }
-
-        
+            else
+            {
+                Label.Visible = true;
+            }
         }
     }
 }

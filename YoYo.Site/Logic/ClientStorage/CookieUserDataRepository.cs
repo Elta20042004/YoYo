@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 
-namespace YoYo.Site.Logic
+namespace YoYo.Site.Logic.ClientStorage
 {
     public class CookieUserDataRepository : IUserDataRepository
     {

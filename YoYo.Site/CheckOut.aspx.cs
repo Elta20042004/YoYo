@@ -2,6 +2,7 @@
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using YoYo.Site.Logic;
+using YoYo.Site.Logic.ClientStorage;
 
 namespace YoYo.Site
 {

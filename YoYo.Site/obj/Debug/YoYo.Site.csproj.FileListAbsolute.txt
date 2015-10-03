@@ -11,3 +11,8 @@ E:\Lena_Projects\YoYo\YoYo.Site\bin\YoYo.Common.pdb
 E:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\YoYo.Site.csprojResolveAssemblyReference.cache
 E:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\YoYo.Site.dll
 E:\Lena_Projects\YoYo\YoYo.Site\obj\Debug\YoYo.Site.pdb
+E:\Lena_Projects\YoYo\YoYo.Site\bin\MongoDB.Bson.dll
+E:\Lena_Projects\YoYo\YoYo.Site\bin\MongoDB.Driver.dll
+E:\Lena_Projects\YoYo\YoYo.Site\bin\MongoDB.Driver.Core.dll
+E:\Lena_Projects\YoYo\YoYo.Site\bin\MongoDB.Bson.xml
+E:\Lena_Projects\YoYo\YoYo.Site\bin\MongoDB.Driver.xml

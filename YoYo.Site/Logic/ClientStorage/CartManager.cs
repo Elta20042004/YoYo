@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace YoYo.Site.Logic
+namespace YoYo.Site.Logic.ClientStorage
 {
     public class CartManager
     {

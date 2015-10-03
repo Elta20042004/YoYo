@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace YoYo.Site.Logic
+namespace YoYo.Site.Logic.ClientStorage
 {
     public class RecentlyViewedManager
     {

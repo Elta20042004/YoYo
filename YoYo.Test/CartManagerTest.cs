@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using YoYo.Site.Logic;
+using YoYo.Site.Logic.ClientStorage;
 
 namespace YoYo.Test
 {

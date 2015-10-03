@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using YoYo.Site.Logic;
+using YoYo.Site.Logic.ClientStorage;
 
 namespace YoYo.Site
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
-        CartManager _productManager;
-        RecentlyViewedManager _rvManager;
+        private readonly CartManager _productManager;
+        private readonly RecentlyViewedManager _rvManager;
         public SiteMaster()
         {
             var repository = new CookieUserDataRepository();
@@ -55,7 +56,7 @@ namespace YoYo.Site
            
         }
 
-        //public int Summa()
+        //public int Sum()
         //{
         //    IList<int> selectedProducts = _productManager.GetProducts();
         //    ShopEntities dbShop = new ShopEntities();

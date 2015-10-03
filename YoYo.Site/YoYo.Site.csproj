@@ -48,6 +48,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.0.1.27, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.0.1\lib\net45\MongoDB.Bson.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -155,7 +159,12 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Logic\IUserDataRepository.cs" />
+    <Compile Include="Logic\ClientStorage\IUserDataRepository.cs" />
+    <Compile Include="Logic\ServerStorage\CachedUsers.cs" />
+    <Compile Include="Logic\ServerStorage\IEventsRepository.cs" />
+    <Compile Include="Logic\ServerStorage\IEventsStorage.cs" />
+    <Compile Include="Logic\ServerStorage\IUserRepository.cs" />
+    <Compile Include="Logic\ServerStorage\MongoEventsStorage.cs" />
     <Compile Include="Prod.aspx.cs">
       <DependentUpon>Prod.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -166,11 +175,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Logic\CookieData.cs" />
-    <Compile Include="Logic\CookieUserDataRepository.cs" />
-    <Compile Include="Logic\RecentlyViewedManager.cs" />
-    <Compile Include="Logic\FileRepository.cs" />
-    <Compile Include="Logic\CartManager.cs" />
+    <Compile Include="Logic\ClientStorage\UserData.cs" />
+    <Compile Include="Logic\ClientStorage\CookieUserDataRepository.cs" />
+    <Compile Include="Logic\ClientStorage\RecentlyViewedManager.cs" />
+    <Compile Include="Logic\ClientStorage\FileRepository.cs" />
+    <Compile Include="Logic\ClientStorage\CartManager.cs" />
     <Compile Include="Shop.aspx.cs">
       <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,13 +234,16 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Logic\ClassDiagram1.cd" />
+    <Content Include="Logic\ClientStorage\ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YoYo.Common\YoYo.Common.csproj">
       <Project>{062081de-555b-4d0d-8a83-b6c2e4e807e0}</Project>
       <Name>YoYo.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
