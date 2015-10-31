@@ -1,20 +1,32 @@
 ﻿var step = 0;
 var prepareCollapse = false;
-var panel = document.getElementById('panel');
+
+var panel = $('#panel')[0]; //document.getElementById('panel');
+
 panel.originalHeight = 250;
 panel.style.height = "0px";
 panel.style.display = "none";
-document.getElementById('panelTitle').onmouseover = show;
-document.getElementById('panelTitle').onmouseout = onMouseOut;
-document.getElementById('panel').onmouseover = onMouseIn;
-document.getElementById('panel').onmouseout = onMouseOut;
+
+$('#panelTitle')[0].onmouseover = show;
+//document.getElementById('panelTitle').onmouseover = show;
+
+$('#panelTitle')[0].onmouseout = onMouseOut;
+//document.getElementById('panelTitle').onmouseout = onMouseOut;
+
+//document.getElementById('panel').onmouseover = onMouseIn;
+panel.onmouseover = onMouseIn;
+
+//document.getElementById('panel').onmouseout = onMouseOut;
+panel.onmouseout = onMouseOut;
+
+
 
 function Move() {
-    var panel = document.getElementById('panel');
+    //var panel = document.getElementById('panel');
     var h = panel.clientHeight + step;
     panel.style.height = h + "px";
 
-    if ((h + step <= panel.originalHeight && step >0)
+    if ((h + step <= panel.originalHeight && step > 0)
         || (h + step >= 0 && step < 0)) {
 
         setTimeout("Move()", 5);
@@ -37,7 +49,7 @@ function execMove(nextMove) {
 function expandPanel() {
     prepareCollapse = false;
     panel.style.display = "";
-    if (panel.clientHeight  < panel.originalHeight) {
+    if (panel.clientHeight < panel.originalHeight) {
         execMove(5);
     }
 }
@@ -71,125 +83,67 @@ function collapsePanel() {
 }
 
 
-
-//function show() {
-//    var cart = getLocalStorageValue('Cart');
-//    var table = document.getElementById('panel');
-//    table.innerHTML = '';
-//    table.originalHeight = Math.min(cart.length, 3) * 105;
-//    for (var i = 0, tr, td; i < cart.length; i++) {
-//        tr = document.createElement('tr');
-//        td = document.createElement('td');
-//        var image = document.createElement('img');
-//        image.src = cart[i].image;
-//        //image.src = "Images/Products/Icon/03.jpg";
-//        image.height = 100;
-//        image.width = 80;
-//        td.appendChild(image);
-//        td.width = 80;
-//        tr = document.createElement('tr');
-//        tr.appendChild(td);
-        
-//        td = document.createElement('td');
-//        td.appendChild(document.createTextNode(cart[i].name));
-        
-//        td.appendChild(document.createTextNode(cart[i].description));
-//        tr.appendChild(td);
-
-
-//        //?????????????????????????????????????????????????
-//        var btn = document.createElement('input');
-//        btn.id = cart[i].id;
-//        btn.type = 'button';
-//        btn.value = 'Delete';
-
-//        btn.addEventListener('click', function () {
-            
-//            removeFromCart(this.id);
-//            location.reload(showCheckoutBag);
-//        });
-//        // btn.setAttribute('onclick', 'table.removeChild(table)');
-
-
-//       // tr.appendChild(td);
-//        tr.appendChild(btn);
-//        table.appendChild(tr);
-        
-
-//    }
-
-//    if (cart.length > 0) {
-//        expandPanel();
-//    }
-//}
-
 function show() {
     var cart = getLocalStorageValue('Cart');
-    var table = document.getElementById('panel');
-    table.innerHTML = '';
-    table.originalHeight = Math.min(cart.length, 3) * 105;
+    var table = $('#panel');
+    table.empty();
+    table.height(Math.min(cart.length, 3) * 105);
     for (var i = 0; i < cart.length; i++) {
-        var divParent = document.createElement('div');
-        divParent.className = "wrapper";
-//Pervaya kolonka
-        var divChild = document.createElement('div');
-        divChild.className = "image";
-        var image = document.createElement('img');
-        image.className = "img";
-        image.src = cart[i].image;
-        
-        divChild.appendChild(image);
-        divParent.appendChild(divChild);        
-//Vtoraya kolonka
-        divChild = document.createElement('div');
-        divChild.className = "details";
+        var divParent = $('<div></div>')
+            .addClass('wrapper');
 
-        divParent.appendChild(divChild);
+        //First column
+        var divChild = $('<div></div>')
+        .addClass('image');
 
-        var p = document.createElement('p');
-        p.className = "Cena";
-        divChild.appendChild(p);
-        p.appendChild(document.createTextNode(cart[i].price+"$"));
+        var image = $('<img />')
+            .addClass("img")
+            .attr("src", cart[i].image);
 
-        p = document.createElement('p');
-        p.className = "Name";
-        divChild.appendChild(p);
-        p.appendChild(document.createTextNode(cart[i].name));
+        divChild.append(image);
+        divParent.append(divChild);
 
-        p = document.createElement('p');
-        p.className = "Vid";
-        divChild.appendChild(p);
-        p.appendChild(document.createTextNode(cart[i].description));
-        
-        p = document.createElement('p');
-        p.className = "quantity";
-        divChild.appendChild(p);
-        p.appendChild(document.createTextNode("Qty: " + cart[i].quantity));
-//Tret'ya kolonka
-        divChild = document.createElement('div');
-        divChild.className = "Remove";
-        divParent.appendChild(divChild);
+        //Second column
+        divChild = $('<div></div>')
+            .addClass("details");
+        divParent.append(divChild);
 
-        var btn = document.createElement('span');
-        btn.id = cart[i].id;
-        btn.className = "rem";
-        btn.title = "Remove";
+        var pp = $('<p></p>')
+            .addClass("Cena")
+            .text(cart[i].price + '$');
+        divChild.append(pp);
 
-        
-        btn.addEventListener('click', function () {
+        pp = $('<p></p>')
+            .addClass("Name")
+            .text(cart[i].name);
+        divChild.append(pp);
 
-            removeFromCart(this.id);
-            location.reload(showCheckoutBag);
-        });
+        pp = $('<p></p>')
+            .addClass("Vid")
+            .text(cart[i].description);
+        divChild.append(pp);
 
+        pp = $('<p></p>')
+            .addClass("quantity")
+            .text("Qty: " + cart[i].quantity);
+        divChild.append(pp);
 
-        
-        divChild.appendChild(btn);
-        
-        
-        table.appendChild(divParent);
+        //Three column
+        divChild = $('<div></div>')
+            .addClass("Remove");
+        divParent.append(divChild);
 
+        var btn = $('<span></span>')
+            .attr('id', cart[i].id)
+            .addClass("rem")
+            .prop('title', 'Remove')
+            .click(function () {
+                $(cart[i].id).remove();
+                location.reload();
+            });
 
+        divChild.append(btn);
+        table.append(divParent);
     }
 
     if (cart.length > 0) {
@@ -197,7 +151,7 @@ function show() {
     }
 }
 
-function findOrAddProduct(cart,productid) {
+function findOrAddProduct(cart, productid) {
     for (var i = 0; i < cart.length; i++) {
         if (productid == cart[i].id) {
             return cart[i];
@@ -209,7 +163,7 @@ function findOrAddProduct(cart,productid) {
     product.name = $("#MainContent_labelProdectName").text();
     product.price = $("#MainContent_labelDescription").text();
     product.description = $("#MainContent_labelDescription1").text();
-    
+
     product.quantity = 0;
     cart.push(product);
     return product;
@@ -233,7 +187,7 @@ function removeFromCart(productId) {
     for (var i = 0; i < cart.length; i++) {
         if (productId != cart[i].id) {
             cartNew.push(cart[i]);
-        }    
+        }
     }
 
     setLocalStorageValue('Cart', cartNew);
