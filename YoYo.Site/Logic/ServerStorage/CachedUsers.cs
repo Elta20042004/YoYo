@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YoYo.Common;
+using YoYo.Common.Entities;
 
 namespace YoYo.Site.Logic.ServerStorage
 {
@@ -23,22 +24,13 @@ namespace YoYo.Site.Logic.ServerStorage
         {
             var user = _cache.Get(email);
             if (user == null)
-            {
-                ShopEntities db = new ShopEntities();
-
-                IEnumerable<User> users = db.Users;
-
-                foreach (var u in db.Users)
-                {
-                    if (u.Email == email)
-                    {
-                        _cache.Push(u.Email, u);
-                        return u;
-                    }
-                }
+            {              
+                var dbShop = new ShopEntities();
+                user = dbShop.User.First(u=>u.Email == email);
+                _cache.Push(user.Email, user);
             }
 
-            return null;
+            return user;
         }
 
         public void PutUser(User user)
@@ -46,7 +38,8 @@ namespace YoYo.Site.Logic.ServerStorage
             _cache.Push(user.Email, user);
 
             ShopEntities db = new ShopEntities();
-            db.AddToUsers(user);
+
+            db.User.Add(user);
         }
     }
 }

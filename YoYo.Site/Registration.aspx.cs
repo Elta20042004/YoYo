@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YoYo.Common.Entities;
 
 namespace YoYo.Site
 {
@@ -23,7 +24,7 @@ namespace YoYo.Site
             h.Password = TextPassword.Text;
 
             ShopEntities dbShop = new ShopEntities();
-            dbShop.Users.AddObject(h);
+            dbShop.User.Add(h);
             dbShop.SaveChanges();
         }
 
@@ -31,7 +32,8 @@ namespace YoYo.Site
         {
             int counter = 0;
             ShopEntities dbShop = new ShopEntities();
-            foreach (var user in dbShop.Users)
+            var shopU = dbShop.User.Select(t => t);
+            foreach (var user in shopU)
             {
                 if (user.Email == TextEmail.Text)
                 {

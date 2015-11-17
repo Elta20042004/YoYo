@@ -1,4 +1,6 @@
-﻿namespace YoYo.Site.Logic.ServerStorage
+﻿using YoYo.Common.Entities;
+
+namespace YoYo.Site.Logic.ServerStorage
 {
     interface IUserRepository
     {

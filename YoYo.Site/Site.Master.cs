@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YoYo.Common.Entities;
 using YoYo.Site.Logic;
 using YoYo.Site.Logic.ClientStorage;
 
@@ -24,10 +25,10 @@ namespace YoYo.Site
         {
             
             ShopEntities dbShop = new ShopEntities();
-            menuMen.DataSource = dbShop.Categories.Where(t=>t.ParentID==1);
+            menuMen.DataSource = dbShop.Category.Where(t=>t.ParentID==1).ToList();
             menuMen.DataBind();
 
-            menuWomen.DataSource = dbShop.Categories.Where(t => t.ParentID == 2);
+            menuWomen.DataSource = dbShop.Category.Where(t => t.ParentID == 2).ToList();
             menuWomen.DataBind();    
 
             Bag.Text = "Bag " + "(" + _productManager.Summa().ToString() + "$" +")";

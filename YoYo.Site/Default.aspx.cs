@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.Objects;
+using YoYo.Common.Entities;
 
 namespace YoYo.Site
 {
@@ -14,10 +12,12 @@ namespace YoYo.Site
         protected void Page_Load(object sender, EventArgs e)
         {
             var dbShop = new ShopEntities();
-            foreach (var category in dbShop.Categories)
+            var temp = dbShop.Category.ToList();
+            var shop = dbShop.Category.Select(p => p);
+            foreach (var c in shop)
             {
-                string url = string.Format(NavigateUrl, category.id);
-                var menuItem = new MenuItem(category.Name, category.id.ToString(), "", url);
+                string url = string.Format(NavigateUrl, c.id);
+                var menuItem = new MenuItem(c.Name, c.id.ToString(), "", url);
                 menuBar.Items.Add(menuItem);
             }
         }

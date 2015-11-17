@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using YoYo.Common.Entities;
 
 namespace YoYo.Site.Logic.ClientStorage
 {
@@ -38,16 +39,17 @@ namespace YoYo.Site.Logic.ClientStorage
         {
             List<int> selectedProducts = GetProducts();
             ShopEntities dbShop = new ShopEntities();
+            var productShop = dbShop.Product.Select(t => t);
             int Sum = 0;
             if (selectedProducts != null)
             {
                 foreach (var product in selectedProducts)
                 {
-                    foreach (var pr in dbShop.Products)
+                    foreach (var pr in productShop)
                     {
                         if (product == pr.id)
                         {
-                            Sum = Sum + pr.Price.Value;
+                            Sum = Sum + pr.Price;
                         }
                     }
                 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -12,8 +13,6 @@ namespace YoYo.Site
 
         void Application_Start(object sender, EventArgs e)
         {
-            // Code that runs on application startup
-
         }
 
         void Application_End(object sender, EventArgs e)

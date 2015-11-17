@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YoYo.Common.Entities;
 using YoYo.Site.Logic;
 using YoYo.Site.Logic.ClientStorage;
 
@@ -23,8 +24,8 @@ namespace YoYo.Site
         protected void Page_Load(object sender, EventArgs e)
         {
             ShopEntities dbShop = new ShopEntities();
-
-            IEnumerable<Product> products = dbShop.Products;
+            var shopProduct = dbShop.Product.Select(t => t);
+            IEnumerable<Product> products = shopProduct;
 
             if (HttpContext.Current.Request.QueryString.AllKeys.Contains("productID"))
             {

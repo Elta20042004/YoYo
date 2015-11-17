@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using YoYo.Common.Entities;
 
 namespace YoYo.Site
 {
@@ -26,8 +27,8 @@ namespace YoYo.Site
         protected IEnumerable<Product> GetCategoryProducts()
         {
             ShopEntities dbShop = new ShopEntities();
-
-            IEnumerable<Product> products = dbShop.Products;
+            var shopP = dbShop.Product.Select(t => t);
+            IEnumerable<Product> products = shopP;
             products = products.Where(t => t.CategoryId == categoryID);
             return (products);
         
